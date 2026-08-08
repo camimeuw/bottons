@@ -64,8 +64,9 @@ body {
 
 .hero-menu {
   position: absolute;
-  top: 6%;
+  top: 50%;
   right: 6%;
+  transform: translateY(-50%);
   z-index: 5;
   display: flex;
   flex-direction: column;
