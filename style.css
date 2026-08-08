@@ -109,7 +109,7 @@ body {
   margin-bottom: 40px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.9);
   filter: url(#thin-logo);
-  animation: logoFloat 4s ease-in-out infinite, flicker 3.2s infinite;
+  animation: logoFloat 4s ease-in-out infinite;
 }
 
 @keyframes logoFloat {
@@ -142,6 +142,10 @@ body {
   .hero-logo { font-size: 5.5rem; }
   .menu-item { font-size: 1.4rem; letter-spacing: 5px; margin-right: -5px; }
   .start-menu { gap: 28px; }
+}
+
+@media (max-width: 699px) {
+  .hero-logo { font-size: 4rem; position: relative; left: -55px; top: -20px; }
 }
 
 .menu-item::after {
