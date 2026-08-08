@@ -1,0 +1,41 @@
+.tienda-body {
+  background-color: #4a2e45;
+  background-image: url('assets/img/bg-texture.jpg');
+  background-repeat: repeat;
+  background-size: 500px auto;
+  min-height: 100vh;
+}
+
+.tienda-cover {
+  width: 100%;
+  line-height: 0;
+  box-shadow: 0 4px 18px rgba(0,0,0,0.55);
+}
+
+.tienda-cover img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.tienda-header {
+  padding: 30px 8%;
+}
+
+.tienda-logo {
+  font-family: 'Angelic War', 'Cormorant Garamond', serif;
+  font-size: 3.5rem;
+  color: #f0e6f5;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.9);
+  filter: url(#thin-logo);
+  display: inline-block;
+}
+
+@media (min-width: 700px) {
+  .tienda-logo { font-size: 5rem; }
+}
+
+.tienda-main {
+  padding: 0 8% 80px;
+  min-height: 40vh;
+}
