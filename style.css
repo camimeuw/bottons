@@ -93,15 +93,11 @@ body {
 
 @media (max-width: 600px) {
   .hero-menu {
-    top: auto;
-    bottom: 8%;
-    right: 50%;
-    transform: translateX(50%);
-    align-items: center;
-    text-align: center;
+    right: 5%;
   }
-  .start-menu { align-items: center; }
-  .hero-logo { font-size: 2rem; letter-spacing: 7px; }
+  .hero-logo { font-size: 1.9rem; letter-spacing: 6px; margin-bottom: 30px; }
+  .start-menu { gap: 16px; }
+  .menu-item { font-size: 0.95rem; letter-spacing: 3px; }
 }
 
 .menu-item {
