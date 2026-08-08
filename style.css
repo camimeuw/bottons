@@ -37,13 +37,34 @@ body {
   height: 100%;
   object-fit: cover;
   object-position: 30% center;
-  filter: contrast(1.1) brightness(0.95);
-  animation: floatVideo 6s ease-in-out infinite;
+  animation: floatVideo 6s ease-in-out infinite, glitchFX 7s linear infinite;
+  transform-origin: center bottom;
 }
 
 @keyframes floatVideo {
-  0%, 100% { transform: translate3d(0,0,0); }
-  50% { transform: translate3d(0,-14px,0); }
+  0%, 100% { transform: scale(0.78) translateY(0); }
+  50% { transform: scale(0.78) translateY(-14px); }
+}
+
+@keyframes glitchFX {
+  0%, 96%, 100% {
+    filter: contrast(1.1) brightness(0.95);
+  }
+  96.5% {
+    filter: contrast(1.6) brightness(1.2) hue-rotate(8deg)
+      drop-shadow(4px 0 rgba(255,0,60,0.6)) drop-shadow(-4px 0 rgba(0,200,255,0.6));
+  }
+  97% {
+    filter: contrast(0.8) brightness(0.7) hue-rotate(-6deg)
+      drop-shadow(-3px 0 rgba(255,0,60,0.5)) drop-shadow(3px 0 rgba(0,200,255,0.5));
+  }
+  97.5% {
+    filter: contrast(1.4) brightness(1.1)
+      drop-shadow(2px 0 rgba(255,0,60,0.5)) drop-shadow(-2px 0 rgba(0,200,255,0.5));
+  }
+  98% {
+    filter: contrast(1.1) brightness(0.95);
+  }
 }
 
 .vhs-overlay {
@@ -70,9 +91,8 @@ body {
 
 .hero-menu {
   position: absolute;
-  top: 50%;
-  right: 10%;
-  transform: translateY(-50%);
+  top: 8%;
+  right: 13%;
   z-index: 5;
   display: flex;
   flex-direction: column;
@@ -82,14 +102,14 @@ body {
 
 .hero-logo {
   font-family: 'Angelic War', 'Cormorant Garamond', serif;
-  font-size: 3.2rem;
+  font-size: 3.5rem;
   letter-spacing: normal;
   color: #f2f2f2;
   text-transform: none;
   margin-bottom: 40px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.9);
   filter: url(#thin-logo);
-  animation: logoFloat 4s ease-in-out infinite, flicker 3.2s infinite;
+  animation: logoFloat 4s ease-in-out infinite;
 }
 
 @keyframes logoFloat {
@@ -119,9 +139,13 @@ body {
 }
 
 @media (min-width: 700px) {
-  .hero-logo { font-size: 4.2rem; }
+  .hero-logo { font-size: 5.5rem; }
   .menu-item { font-size: 1.4rem; letter-spacing: 5px; margin-right: -5px; }
   .start-menu { gap: 28px; }
+}
+
+@media (max-width: 699px) {
+  .hero-logo { font-size: 4rem; position: relative; left: -55px; top: -20px; }
 }
 
 .menu-item::after {
