@@ -36,10 +36,38 @@
     </nav>
     <p class="hero-date">— presioná una opción —</p>
   </div>
+
+  <audio id="bg-music" loop preload="none">
+    <source src="assets/audio/bg-music.mp3" type="audio/mpeg">
+  </audio>
+
+  <button id="sound-toggle" class="sound-toggle" type="button" aria-label="Activar música" aria-pressed="false">
+    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M4 9v6h4l5 4V5L8 9H4z"></path>
+      <path class="sound-wave" d="M16.5 8.5a5 5 0 0 1 0 7"></path>
+      <path class="sound-wave" d="M19 6a9 9 0 0 1 0 12"></path>
+      <line class="sound-mute" x1="16" y1="7" x2="21" y2="17"></line>
+    </svg>
+  </button>
 </section>
 
   <!-- Página de inicio únicamente -->
 
+  <script>
+    const music = document.getElementById('bg-music');
+    const toggle = document.getElementById('sound-toggle');
+    toggle.addEventListener('click', () => {
+      const playing = !music.paused;
+      if (playing) {
+        music.pause();
+      } else {
+        music.play().catch(() => {});
+      }
+      toggle.classList.toggle('is-playing', !playing);
+      toggle.setAttribute('aria-pressed', String(!playing));
+      toggle.setAttribute('aria-label', playing ? 'Activar música' : 'Silenciar música');
+    });
+  </script>
 
 </body>
 </html>
