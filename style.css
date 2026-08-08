@@ -35,8 +35,8 @@ body {
 }
 
 @keyframes floatVideo {
-  0%, 100% { transform: scale(0.88) translate(12%, 0); }
-  50% { transform: scale(0.88) translate(12%, -14px); }
+  0%, 100% { transform: scale(0.88) translate(22%, 0); }
+  50% { transform: scale(0.88) translate(22%, -14px); }
 }
 
 .vhs-overlay {
