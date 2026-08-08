@@ -212,7 +212,7 @@ body {
 .sound-toggle {
   position: absolute;
   left: 24px;
-  bottom: 24px;
+  top: 24px;
   z-index: 6;
   width: 44px;
   height: 44px;
