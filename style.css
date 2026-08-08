@@ -29,14 +29,14 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: 68% center;
   filter: contrast(1.1) brightness(0.95);
   animation: floatVideo 6s ease-in-out infinite;
 }
 
 @keyframes floatVideo {
-  0%, 100% { transform: scale(0.88) translate(22%, 0); }
-  50% { transform: scale(0.88) translate(22%, -14px); }
+  0%, 100% { transform: translate3d(0,0,0); }
+  50% { transform: translate3d(0,-14px,0); }
 }
 
 .vhs-overlay {
