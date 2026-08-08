@@ -39,11 +39,12 @@ body {
   object-position: 30% center;
   filter: contrast(1.1) brightness(0.95);
   animation: floatVideo 6s ease-in-out infinite;
+  transform-origin: center bottom;
 }
 
 @keyframes floatVideo {
-  0%, 100% { transform: scale(0.93) translateY(0); }
-  50% { transform: scale(0.93) translateY(-14px); }
+  0%, 100% { transform: scale(0.78) translateY(0); }
+  50% { transform: scale(0.78) translateY(-14px); }
 }
 
 .vhs-overlay {
