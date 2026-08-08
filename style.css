@@ -64,27 +64,24 @@ body {
 .hero-menu {
   position: absolute;
   top: 50%;
-  right: 5%;
+  right: 4%;
   transform: translateY(-50%);
   z-index: 5;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   text-align: right;
-  padding: 30px 34px;
-  background: rgba(0,0,0,0.4);
-  backdrop-filter: blur(4px);
-  border-radius: 6px;
 }
 
 .hero-logo {
   font-family: 'Cormorant Garamond', serif;
   font-size: 2.4rem;
   letter-spacing: 9px;
+  margin-right: -9px;
   color: #f2f2f2;
   text-transform: uppercase;
   margin-bottom: 40px;
-  text-shadow: 0 0 12px rgba(255,255,255,0.25);
+  text-shadow: 0 0 10px rgba(0,0,0,0.9), 0 0 20px rgba(0,0,0,0.7), 0 2px 6px rgba(0,0,0,0.8);
 }
 
 .start-menu {
@@ -98,18 +95,19 @@ body {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.2rem;
   letter-spacing: 4px;
+  margin-right: -4px;
   text-transform: uppercase;
-  color: #ccc;
+  color: #eee;
   text-decoration: none;
   position: relative;
   padding-bottom: 4px;
+  text-shadow: 0 0 8px rgba(0,0,0,0.9), 0 2px 5px rgba(0,0,0,0.85);
   transition: color 0.3s ease, letter-spacing 0.3s ease;
 }
 
 @media (min-width: 700px) {
-  .hero-menu { padding: 40px 46px; }
-  .hero-logo { font-size: 3.4rem; letter-spacing: 11px; }
-  .menu-item { font-size: 1.4rem; letter-spacing: 5px; }
+  .hero-logo { font-size: 3.4rem; letter-spacing: 11px; margin-right: -11px; }
+  .menu-item { font-size: 1.4rem; letter-spacing: 5px; margin-right: -5px; }
   .start-menu { gap: 28px; }
 }
 
