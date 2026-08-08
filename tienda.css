@@ -7,6 +7,7 @@
 }
 
 .tienda-cover {
+  position: relative;
   width: 100%;
   line-height: 0;
   box-shadow: 0 4px 18px rgba(0,0,0,0.55);
@@ -18,21 +19,21 @@
   display: block;
 }
 
-.tienda-header {
-  padding: 30px 8%;
-}
-
 .tienda-logo {
+  position: absolute;
+  left: 5%;
+  bottom: 8%;
+  z-index: 2;
   font-family: 'Angelic War', 'Cormorant Garamond', serif;
-  font-size: 3.5rem;
+  font-size: 2.6rem;
+  line-height: 1;
   color: #f0e6f5;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.9);
+  text-shadow: 0 1px 3px rgba(0,0,0,0.9), 0 0 18px rgba(0,0,0,0.6);
   filter: url(#thin-logo);
-  display: inline-block;
 }
 
 @media (min-width: 700px) {
-  .tienda-logo { font-size: 5rem; }
+  .tienda-logo { font-size: 4.5rem; }
 }
 
 .tienda-main {
