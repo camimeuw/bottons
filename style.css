@@ -107,10 +107,12 @@ body {
   letter-spacing: normal;
   color: #f2f2f2;
   text-transform: none;
-  margin-bottom: 110px;
+  margin-bottom: 190px;
   text-shadow: 0 1px 3px rgba(0,0,0,0.9);
   filter: url(#thin-logo);
   animation: logoFloat 4s ease-in-out infinite;
+  position: relative;
+  left: -25px;
 }
 
 @keyframes logoFloat {
