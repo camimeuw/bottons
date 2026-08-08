@@ -22,10 +22,10 @@
 .tienda-logo {
   position: absolute;
   left: 5%;
-  bottom: 8%;
+  bottom: 40%;
   z-index: 2;
   font-family: 'Angelic War', 'Cormorant Garamond', serif;
-  font-size: 2.6rem;
+  font-size: 3.2rem;
   line-height: 1;
   color: #f0e6f5;
   text-shadow: 0 1px 3px rgba(0,0,0,0.9), 0 0 18px rgba(0,0,0,0.6);
@@ -33,7 +33,7 @@
 }
 
 @media (min-width: 700px) {
-  .tienda-logo { font-size: 4.5rem; }
+  .tienda-logo { font-size: 5.2rem; bottom: 15%; }
 }
 
 .tienda-main {
