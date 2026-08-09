@@ -66,7 +66,6 @@
   border: none;
   cursor: pointer;
   transition: color 0.25s ease;
-  transform: translateX(-8px);
 }
 
 .cat-menu-label {
@@ -103,6 +102,7 @@
   align-items: center;
   gap: 20px;
   margin: 20px 0 10px;
+  transform: translateX(-8px);
 }
 
 .cat-item {
