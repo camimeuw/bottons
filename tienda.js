@@ -17,23 +17,23 @@
 
   Object.keys(categorias).forEach((cat) => {
     const btn = document.createElement("button");
-    btn.className = "cat-tab";
+    btn.className = "cat-item";
     btn.type = "button";
-    btn.textContent = cat;
+    btn.innerHTML = '<span class="cat-cursor">✦</span><span class="cat-label">' + cat + '</span>';
     btn.addEventListener("click", () => selectCategoria(cat, btn));
     tabsEl.appendChild(btn);
   });
 
   function selectCategoria(cat, btn) {
-    tabsEl.querySelectorAll(".cat-tab").forEach((b) => b.classList.remove("is-active"));
+    tabsEl.querySelectorAll(".cat-item").forEach((b) => b.classList.remove("is-active"));
     btn.classList.add("is-active");
 
     chipsEl.innerHTML = "";
     categorias[cat].forEach((sub) => {
       const chip = document.createElement("button");
-      chip.className = "subcat-chip";
+      chip.className = "subcat-item";
       chip.type = "button";
-      chip.textContent = sub;
+      chip.innerHTML = '<span class="subcat-cursor">▸</span><span class="subcat-label">' + sub + '</span>';
       chip.addEventListener("click", () => selectSubcategoria(cat, sub, chip));
       chipsEl.appendChild(chip);
     });
@@ -42,7 +42,7 @@
   }
 
   function selectSubcategoria(cat, sub, chip) {
-    chipsEl.querySelectorAll(".subcat-chip").forEach((c) => c.classList.remove("is-active"));
+    chipsEl.querySelectorAll(".subcat-item").forEach((c) => c.classList.remove("is-active"));
     chip.classList.add("is-active");
 
     gridEl.innerHTML = '<p class="productos-empty">Próximamente: ' + cat + ' → ' + sub + ' ✦</p>';
