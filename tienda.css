@@ -51,6 +51,47 @@
   min-height: 40vh;
 }
 
+.cat-menu-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 26px auto 0;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: #d9c6d4;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 0.25s ease, letter-spacing 0.25s ease;
+}
+
+.cat-menu-toggle:hover {
+  color: #f4ecf3;
+  letter-spacing: 6px;
+}
+
+.cat-menu-icon {
+  opacity: 0.7;
+  transition: transform 0.35s ease;
+}
+
+.cat-menu-toggle[aria-expanded="true"] .cat-menu-icon {
+  transform: rotate(180deg);
+}
+
+.cat-tabs-wrapper {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.cat-tabs-wrapper.is-open {
+  max-height: 600px;
+}
+
 .cat-tabs {
   display: flex;
   flex-direction: column;

@@ -11,10 +11,19 @@
   };
 
   const tabsEl = document.getElementById("cat-tabs");
+  const tabsWrapperEl = document.getElementById("cat-tabs-wrapper");
+  const menuToggleEl = document.getElementById("cat-menu-toggle");
   const chipsEl = document.getElementById("subcat-chips");
   const gridEl = document.getElementById("productos-grid");
 
   if (!tabsEl) return;
+
+  if (menuToggleEl && tabsWrapperEl) {
+    menuToggleEl.addEventListener("click", () => {
+      const isOpen = tabsWrapperEl.classList.toggle("is-open");
+      menuToggleEl.setAttribute("aria-expanded", String(isOpen));
+    });
+  }
 
   Object.keys(categorias).forEach((cat) => {
     const btn = document.createElement("button");
@@ -28,6 +37,11 @@
   function selectCategoria(cat, btn) {
     tabsEl.querySelectorAll(".cat-item").forEach((b) => b.classList.remove("is-active"));
     btn.classList.add("is-active");
+
+    if (tabsWrapperEl && menuToggleEl) {
+      tabsWrapperEl.classList.remove("is-open");
+      menuToggleEl.setAttribute("aria-expanded", "false");
+    }
 
     chipsEl.innerHTML = "";
     categorias[cat].forEach((sub) => {
