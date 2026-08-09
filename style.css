@@ -126,6 +126,67 @@ body.page-leaving {
   pointer-events: none;
 }
 
+.deco-qmarks {
+  position: absolute;
+  inset: 0;
+  z-index: 4;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.deco-q {
+  position: absolute;
+  font-family: 'Baloo 2', sans-serif;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.1;
+  text-shadow: 0 0 6px rgba(255,255,255,0.7), 0 0 14px rgba(255,255,255,0.35);
+  opacity: 0.85;
+  animation: qSparkle 3.6s ease-in-out infinite;
+}
+
+.deco-1 {
+  top: 16%;
+  left: 12%;
+  font-size: 1.1rem;
+  transform: rotate(-6deg);
+  animation-delay: 0s;
+}
+
+.deco-2 {
+  top: 42%;
+  left: 6%;
+  font-size: 0.95rem;
+  transform: rotate(4deg);
+  animation-delay: 0.8s;
+}
+
+.deco-3 {
+  bottom: 10%;
+  left: 8%;
+  font-size: 1rem;
+  transform: rotate(-3deg);
+  animation-delay: 1.6s;
+}
+
+.deco-4 {
+  bottom: 22%;
+  right: 4%;
+  font-size: 0.85rem;
+  transform: rotate(5deg);
+  animation-delay: 2.4s;
+}
+
+@media (min-width: 700px) {
+  .deco-q { font-size: 1.3rem; }
+  .deco-4 { bottom: 12%; right: 20%; }
+}
+
+@keyframes qSparkle {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 0.95; }
+}
+
 .hero-menu {
   position: absolute;
   top: 8%;
