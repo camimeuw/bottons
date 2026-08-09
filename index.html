@@ -20,10 +20,9 @@
 
  <section class="hero">
   <div class="hero-video-frame">
-    <video id="hero-video-source" autoplay muted loop playsinline style="display:none">
-      <source src="assets/video/hero-character.webm" type="video/webm">
+    <video class="hero-char-video" autoplay muted loop playsinline>
+      <source src="assets/video/hero-character.mp4" type="video/mp4">
     </video>
-    <canvas class="hero-char-video" id="hero-canvas"></canvas>
     <div class="vhs-overlay"></div>
     <div class="grain-overlay"></div>
   </div>
@@ -70,7 +69,6 @@
       toggle.setAttribute('aria-label', playing ? 'Activar música' : 'Silenciar música');
     });
   </script>
-  <script src="chromakey.js"></script>
   <script src="transitions.js"></script>
 
 </body>
