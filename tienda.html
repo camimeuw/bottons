@@ -21,8 +21,44 @@
 
 <button id="carrito-btn" class="carrito-btn" type="button" aria-label="Ver carrito">
   <img src="assets/img/carrito-boton.png" alt="">
-  <span class="carrito-count">0</span>
+  <span class="carrito-count">2</span>
 </button>
+
+<div id="carrito-overlay" class="carrito-overlay"></div>
+
+<aside id="carrito-panel" class="carrito-panel">
+  <div class="carrito-panel-header">
+    <h2 class="carrito-titulo">Tu Carrito</h2>
+    <button id="carrito-close" class="carrito-close" type="button" aria-label="Cerrar carrito">✕</button>
+  </div>
+
+  <div class="carrito-items">
+    <div class="carrito-item">
+      <div class="carrito-item-img" style="background:#8a5a7a;"></div>
+      <div class="carrito-item-info">
+        <p class="carrito-item-nombre">Top ejemplo Y2K</p>
+        <p class="carrito-item-detalle">Talle M</p>
+      </div>
+      <p class="carrito-item-precio">$8.000</p>
+    </div>
+    <div class="carrito-item">
+      <div class="carrito-item-img" style="background:#5a3a52;"></div>
+      <div class="carrito-item-info">
+        <p class="carrito-item-nombre">Campera vintage</p>
+        <p class="carrito-item-detalle">Talle S</p>
+      </div>
+      <p class="carrito-item-precio">$15.000</p>
+    </div>
+  </div>
+
+  <div class="carrito-footer">
+    <div class="carrito-total">
+      <span>Total</span>
+      <span>$23.000</span>
+    </div>
+    <a href="#" class="carrito-checkout">Finalizar Pedido</a>
+  </div>
+</aside>
 
 <section class="tienda-cover">
   <img src="assets/img/tienda-portada.jpg" alt="Buttons">

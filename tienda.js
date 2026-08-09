@@ -49,3 +49,26 @@
     gridEl.innerHTML = '<p class="productos-empty">Próximamente: ' + cat + ' → ' + sub + ' ✦</p>';
   }
 })();
+
+(function () {
+  const btn = document.getElementById("carrito-btn");
+  const panel = document.getElementById("carrito-panel");
+  const overlay = document.getElementById("carrito-overlay");
+  const closeBtn = document.getElementById("carrito-close");
+
+  if (!btn || !panel || !overlay) return;
+
+  function openCarrito() {
+    panel.classList.add("is-open");
+    overlay.classList.add("is-open");
+  }
+
+  function closeCarrito() {
+    panel.classList.remove("is-open");
+    overlay.classList.remove("is-open");
+  }
+
+  btn.addEventListener("click", openCarrito);
+  overlay.addEventListener("click", closeCarrito);
+  if (closeBtn) closeBtn.addEventListener("click", closeCarrito);
+})();
