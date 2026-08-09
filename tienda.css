@@ -1,9 +1,21 @@
+@font-face {
+  font-family: 'Kiwi';
+  src: url('assets/fonts/Kiwi.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .tienda-body {
   background-color: #4a2e45;
   background-image: url('assets/img/bg-texture.jpg');
   background-repeat: repeat;
   background-size: 500px auto;
   min-height: 100vh;
+}
+
+.producto-body,
+.producto-body * {
+  font-family: 'Kiwi', 'Cormorant Garamond', serif !important;
 }
 
 .tienda-cover {
