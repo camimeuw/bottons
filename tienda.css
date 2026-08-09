@@ -66,6 +66,7 @@
   border: none;
   cursor: pointer;
   transition: color 0.25s ease;
+  transform: translateX(-8px);
 }
 
 .cat-menu-label {
