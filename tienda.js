@@ -1,12 +1,14 @@
 (function () {
   const ROPA = ["Tops/mangas largas/remeras", "Camperas", "Minifaldas", "Zapatos", "Accesorios", "Pantalones", "Shorts", "Bolsos", "Bikinis"];
   const ROPA_SIN_BIKINI = ROPA.filter((s) => s !== "Bikinis");
+  const MIDWEST = ["Tops", "Camperitas", "Polleritas", "Zapatos", "Accesorios", "Pantalones", "Shorts", "Bolsos", "Vestidos"];
 
   const categorias = {
     "Alt & Y2K": ROPA,
-    "Soft": ROPA,
+    "Soft & Polka Dots": ROPA,
     "Vintage & 2nd Hand": ROPA_SIN_BIKINI,
-    "Conjuntos Completos": ["Alt & Y2K", "Soft", "2nd Hand", "Horror Game Protagonist", "Harajuku", "Halloween"],
+    "Midwest & Grunge": MIDWEST,
+    "Conjuntos Completos": ["Alt & Y2K", "Soft & Polka Dots", "2nd Hand", "Horror Game Protagonist", "Harajuku", "Halloween", "Midwest & Grunge"],
     "Minecraft & Stuff": ["Coleccionables", "DVD's", "Merch", "Frazadas", "Tapices decorativos", "Objetos decorativos", "Peluches", "Llaveros", "Carcasas"]
   };
 
