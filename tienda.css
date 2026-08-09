@@ -10,13 +10,22 @@
   position: relative;
   width: 100%;
   line-height: 0;
-  box-shadow: 0 4px 18px rgba(0,0,0,0.55);
+  -webkit-mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
+  mask-image: linear-gradient(to bottom, black 75%, transparent 100%);
 }
 
 .tienda-cover img {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.tienda-cover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 60%, #4a2e45 100%);
+  pointer-events: none;
 }
 
 .tienda-logo {
