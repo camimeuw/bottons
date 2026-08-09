@@ -6,7 +6,8 @@
     "Alt & Y2K": ROPA,
     "Soft": ROPA,
     "Vintage & 2nd Hand": ROPA_SIN_BIKINI,
-    "Conjuntos Completos": ["Alt & Y2K", "Soft", "2nd Hand", "Horror Game Protagonist", "Harajuku", "Halloween"]
+    "Conjuntos Completos": ["Alt & Y2K", "Soft", "2nd Hand", "Horror Game Protagonist", "Harajuku", "Halloween"],
+    "Minecraft & Stuff": ["Coleccionables", "DVD's", "Merch", "Frazadas", "Tapices decorativos", "Objetos decorativos", "Peluches", "Llaveros", "Carcasas"]
   };
 
   const tabsEl = document.getElementById("cat-tabs");
