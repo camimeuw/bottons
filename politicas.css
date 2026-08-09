@@ -1,0 +1,75 @@
+.politicas-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 24px 8%;
+}
+
+.politicas-back {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  letter-spacing: 1px;
+  color: #e6d9e3;
+  text-decoration: none;
+  opacity: 0.85;
+  transition: opacity 0.25s ease;
+}
+
+.politicas-back:hover {
+  opacity: 1;
+}
+
+.politicas-logo {
+  font-family: 'Angelic War', 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  color: #f0e6f5;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.9);
+  filter: url(#thin-logo);
+}
+
+.politicas-main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 20px 8% 100px;
+}
+
+.politicas-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: 2rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #f4ecf3;
+  text-align: center;
+  margin-bottom: 50px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.6);
+}
+
+.politicas-block {
+  background: rgba(0,0,0,0.22);
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 6px;
+  padding: 22px 26px;
+  margin-bottom: 24px;
+}
+
+.politicas-block h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  color: #e8bfe0;
+  margin-bottom: 12px;
+}
+
+.politicas-block p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #eee2ec;
+}
+
+@media (min-width: 700px) {
+  .politicas-title { font-size: 2.6rem; }
+  .politicas-logo { font-size: 2.6rem; }
+}
