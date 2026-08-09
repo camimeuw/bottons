@@ -230,8 +230,11 @@
   max-width: 380px;
   z-index: 30;
   background-color: #3a2038;
-  background-image: url('assets/img/bg-texture.jpg');
-  background-size: 500px auto;
+  background-image:
+    linear-gradient(rgba(58,32,56,0.72), rgba(58,32,56,0.72)),
+    url('assets/img/carrito-fondo.jpg');
+  background-size: cover;
+  background-position: center;
   box-shadow: -6px 0 24px rgba(0,0,0,0.6);
   transform: translateX(100%);
   transition: transform 0.4s ease;
@@ -251,12 +254,10 @@
   border-bottom: 1px dashed rgba(232,191,224,0.35);
 }
 
-.carrito-titulo {
-  font-family: 'Angelic War', 'Cormorant Garamond', serif;
-  font-size: 1.8rem;
-  color: #f0e6f5;
-  text-shadow: 0 1px 3px rgba(0,0,0,0.9);
-  filter: url(#thin-logo);
+.carrito-titulo-img {
+  height: 46px;
+  width: auto;
+  filter: drop-shadow(0 2px 5px rgba(0,0,0,0.6));
 }
 
 .carrito-close {
