@@ -1,5 +1,5 @@
 (function () {
-  const ROPA = ["Tops/mangas largas/remeras", "Camperas", "Polleritas", "Zapatos", "Accesorios", "Pantalones", "Shorts", "Bolsos", "Bikinis"];
+  const ROPA = ["Tops/mangas largas/remeras", "Camperas", "Minifaldas", "Zapatos", "Accesorios", "Pantalones", "Shorts", "Bolsos", "Bikinis"];
   const ROPA_SIN_BIKINI = ROPA.filter((s) => s !== "Bikinis");
 
   const categorias = {
