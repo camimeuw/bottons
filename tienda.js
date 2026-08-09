@@ -46,7 +46,7 @@
     }
 
     chipsEl.innerHTML = "";
-    categorias[cat].forEach((sub) => {
+    ["Todo"].concat(categorias[cat]).forEach((sub) => {
       const chip = document.createElement("button");
       chip.className = "subcat-item";
       chip.type = "button";
