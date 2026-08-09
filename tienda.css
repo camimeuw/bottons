@@ -402,3 +402,64 @@
   background: #f4ecf3;
   letter-spacing: 5px;
 }
+
+.sobre-tienda {
+  max-width: 640px;
+  margin: 40px auto 0;
+  padding: 0 8%;
+  text-align: center;
+}
+
+.sobre-tienda-titulo {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: 1.6rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #f0e6f5;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  margin-bottom: 22px;
+}
+
+.sobre-tienda-texto {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #d9c6d4;
+  margin-bottom: 18px;
+}
+
+.tienda-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  padding: 50px 8% 60px;
+  margin-top: 30px;
+  border-top: 1px dashed rgba(232,191,224,0.25);
+}
+
+.footer-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+  color: #e6d9e3;
+  text-decoration: none;
+  transition: color 0.25s ease, transform 0.2s ease;
+}
+
+.footer-link:hover {
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.footer-note {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.75rem;
+  letter-spacing: 3px;
+  color: #8a7385;
+  margin-top: 12px;
+}
