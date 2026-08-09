@@ -50,3 +50,85 @@
   padding: 0 8% 80px;
   min-height: 40vh;
 }
+
+.cat-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  justify-content: center;
+  margin-bottom: 26px;
+}
+
+.cat-tab {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: #f4ecf3;
+  background: rgba(0,0,0,0.28);
+  border: 1px solid rgba(232,191,224,0.45);
+  border-radius: 4px;
+  padding: 14px 20px;
+  cursor: pointer;
+  transition: background 0.25s ease, border-color 0.25s ease, transform 0.15s ease;
+}
+
+.cat-tab:hover {
+  background: rgba(0,0,0,0.42);
+  border-color: #e8bfe0;
+}
+
+.cat-tab.is-active {
+  background: #e8bfe0;
+  color: #3a1f36;
+  border-color: #e8bfe0;
+  box-shadow: 0 0 14px rgba(232,191,224,0.6);
+}
+
+.subcat-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-bottom: 40px;
+  min-height: 38px;
+}
+
+.subcat-chip {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+  color: #e6d9e3;
+  background: transparent;
+  border: 1px solid rgba(230,217,227,0.4);
+  border-radius: 20px;
+  padding: 7px 16px;
+  cursor: pointer;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.subcat-chip:hover {
+  border-color: #e6d9e3;
+}
+
+.subcat-chip.is-active {
+  background: #e6d9e3;
+  color: #3a1f36;
+  border-color: #e6d9e3;
+}
+
+.productos-grid {
+  min-height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.productos-empty {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  letter-spacing: 1px;
+  color: #d9c6d4;
+  opacity: 0.85;
+}
