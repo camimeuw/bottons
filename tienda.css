@@ -463,3 +463,188 @@
   color: #8a7385;
   margin-top: 12px;
 }
+
+.galeria {
+  margin-top: 50px;
+  text-align: center;
+}
+
+.galeria-titulo {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: 1.6rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #f0e6f5;
+  text-shadow: 0 1px 3px rgba(0,0,0,0.6);
+  margin-bottom: 26px;
+}
+
+.galeria-viewport {
+  overflow: hidden;
+  width: 100%;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, black 8%, black 92%, transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, black 8%, black 92%, transparent 100%);
+}
+
+.galeria-track {
+  display: flex;
+  width: max-content;
+  animation: galeriaGirar 22s linear infinite;
+}
+
+.galeria-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes galeriaGirar {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.galeria-card {
+  width: 160px;
+  flex-shrink: 0;
+  margin: 0 12px;
+  cursor: pointer;
+  transition: transform 0.25s ease;
+}
+
+.galeria-card:hover {
+  transform: translateY(-6px);
+}
+
+.galeria-card-img {
+  width: 160px;
+  height: 200px;
+  border-radius: 6px;
+  border: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.4);
+  margin-bottom: 10px;
+}
+
+.galeria-card-nombre {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
+  color: #f4ecf3;
+}
+
+.galeria-card-precio {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem;
+  color: #e8bfe0;
+  margin-top: 2px;
+}
+
+.producto-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.65);
+  z-index: 39;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+}
+
+.producto-overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.producto-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.92);
+  width: 88%;
+  max-width: 360px;
+  max-height: 85vh;
+  overflow-y: auto;
+  z-index: 40;
+  background-color: #3a2038;
+  background-image:
+    linear-gradient(rgba(58,32,56,0.85), rgba(58,32,56,0.85)),
+    url('assets/img/carrito-fondo.jpg');
+  background-size: cover;
+  background-position: center;
+  border-radius: 10px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.6);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.producto-modal.is-open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+.producto-close {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: none;
+  border: none;
+  color: #e6d9e3;
+  font-size: 1.1rem;
+  cursor: pointer;
+  z-index: 2;
+}
+
+.producto-close:hover {
+  color: #fff;
+}
+
+.producto-modal-img {
+  width: 100%;
+  height: 260px;
+  border-radius: 10px 10px 0 0;
+}
+
+.producto-modal-info {
+  padding: 22px 24px 28px;
+  text-align: center;
+}
+
+.producto-modal-nombre {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 500;
+  font-size: 1.3rem;
+  color: #f4ecf3;
+  margin-bottom: 8px;
+}
+
+.producto-modal-precio {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.15rem;
+  color: #e8bfe0;
+  margin-bottom: 14px;
+}
+
+.producto-modal-detalle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #d9c6d4;
+  margin-bottom: 22px;
+}
+
+.producto-modal-agregar {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: #3a1f36;
+  background: #e8bfe0;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 2px;
+  cursor: pointer;
+  transition: background 0.25s ease, letter-spacing 0.25s ease;
+}
+
+.producto-modal-agregar:hover {
+  background: #f4ecf3;
+  letter-spacing: 4px;
+}
