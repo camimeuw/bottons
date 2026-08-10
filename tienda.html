@@ -16,101 +16,198 @@
     <filter id="thin-logo">
       <feMorphology operator="erode" radius="0.28"></feMorphology>
     </filter>
+    <pattern id="lunares" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+      <rect width="20" height="20" fill="#4a2e45"/>
+      <circle cx="10" cy="10" r="3.2" fill="#e8bfe0"/>
+    </pattern>
+    <filter id="mano2" x="-10%" y="-10%" width="120%" height="120%">
+      <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="2" result="noise"/>
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" xChannelSelector="R" yChannelSelector="G"/>
+    </filter>
   </defs>
 </svg>
 
-<button id="carrito-btn" class="carrito-btn" type="button" aria-label="Ver carrito">
-  <img src="assets/img/carrito-boton-2.png" alt="">
-  <span class="carrito-count">2</span>
+<div class="banner">
+  <img src="assets/img/tienda-portada.jpg" class="banner-img" alt="Buttons">
+  <div class="banner-overlay">
+    <svg viewBox="0 0 700 160" class="banner-svg">
+      <text x="10" y="85%" class="banner-svg-borde" fill="none" filter="url(#mano2)">Buttons</text>
+      <text x="10" y="85%" class="banner-svg-texto" fill="url(#lunares)" filter="url(#mano2)">Buttons</text>
+    </svg>
+  </div>
+</div>
+
+<div class="marquee-wrapper">
+  <div class="marquee-track">
+    ✦ envíos a todo el país ✦ prendas únicas ✦ alt &amp; y2k ✦ soft &amp; polka dots ✦ vintage &amp; 2nd hand ✦ midwest &amp; grunge ✦ buttons ✦ envíos a todo el país ✦ prendas únicas ✦ buttons ✦
+  </div>
+</div>
+
+<div class="menu-mobile-wrapper">
+  <button class="menu-hamburguesa" id="menu-hamburguesa" type="button">✦ menú ✦</button>
+  <div class="menu-mobile" id="menu-mobile">
+    <a href="#grid-alt-y2k">alt &amp; y2k</a>
+    <a href="#grid-soft-polka">soft &amp; polka dots</a>
+    <a href="#grid-vintage">vintage &amp; 2nd hand</a>
+    <a href="#grid-midwest">midwest &amp; grunge</a>
+    <a href="#grid-conjuntos">conjuntos completos</a>
+    <a href="#grid-minecraft">minecraft &amp; stuff</a>
+    <a href="#contacto-seccion">contacto</a>
+  </div>
+</div>
+
+<div class="tienda-grid">
+  <aside class="sidebar">
+    <div class="buscador-box">
+      <input type="text" id="buscador" class="buscador-input" placeholder="buscar producto...">
+    </div>
+    <nav class="sidebar-nav">
+      <h3 class="sidebar-titulo">✦ categorías</h3>
+      <a href="#grid-alt-y2k" class="sidebar-link">alt &amp; y2k</a>
+      <a href="#grid-soft-polka" class="sidebar-link">soft &amp; polka dots</a>
+      <a href="#grid-vintage" class="sidebar-link">vintage &amp; 2nd hand</a>
+      <a href="#grid-midwest" class="sidebar-link">midwest &amp; grunge</a>
+      <a href="#grid-conjuntos" class="sidebar-link">conjuntos completos</a>
+      <a href="#grid-minecraft" class="sidebar-link">minecraft &amp; stuff</a>
+      <a href="#contacto-seccion" class="sidebar-link">contacto</a>
+    </nav>
+    <div class="sidebar-info">
+      <p>envíos a todo el país</p>
+      <p>prendas únicas</p>
+    </div>
+    <div class="sidebar-anime">
+      <div class="anime-placeholder">
+        <img src="assets/img/tienda-portada.jpg" alt="Buttons" class="mascota-img">
+      </div>
+    </div>
+    <div class="contador">
+      <p class="contador-titulo">✦ visitas</p>
+      <p class="contador-numero" id="contador">000000</p>
+    </div>
+    <div class="sidebar-redes">
+      <a href="https://instagram.com/buttons_py" class="red-btn" target="_blank" rel="noopener">instagram</a>
+      <a href="https://wa.me/595981751066" class="red-btn" target="_blank" rel="noopener">whatsapp</a>
+    </div>
+  </aside>
+
+  <main class="contenido">
+
+    <!-- REPRODUCTOR + DESTACADOS -->
+    <div class="seccion player-seccion">
+      <div class="mp3-caja">
+        <div class="mp3-ondas" id="ondas">
+          <div class="onda"></div>
+          <div class="onda"></div>
+          <div class="onda"></div>
+          <div class="onda"></div>
+          <div class="onda"></div>
+        </div>
+        <div class="mp3-info">
+          <p class="mp3-titulo">buttons radio ♡</p>
+          <p class="mp3-cancion">ambient session ✦</p>
+          <div class="mp3-barra">
+            <div class="mp3-progreso" id="mp3-progreso"></div>
+          </div>
+          <p class="mp3-tiempo" id="mp3-tiempo">0:00</p>
+          <div class="mp3-controles">
+            <button class="mp3-btn mp3-play" id="play-btn" type="button">▶</button>
+          </div>
+        </div>
+      </div>
+      <audio id="bg-music" loop preload="none">
+        <source src="assets/audio/bg-music.mp3" type="audio/mpeg">
+      </audio>
+
+      <div class="destacados-box">
+        <p class="destacados-titulo">✦ destacados</p>
+        <div class="destacados-viewport">
+          <div class="destacados-track" id="destacados-track"></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- BIENVENIDA -->
+    <div class="seccion inicio-seccion">
+      <div class="inicio-frase">
+        <svg viewBox="0 0 400 100" class="inicio-svg">
+          <circle cx="20" cy="15" r="7" fill="#e8bfe0" class="svg-burbuja1"/>
+          <circle cx="385" cy="12" r="5" fill="#d9c6d4" class="svg-burbuja2"/>
+          <circle cx="15" cy="88" r="6" fill="#d9c6d4" class="svg-burbuja3"/>
+          <circle cx="385" cy="85" r="8" fill="#e8bfe0" class="svg-burbuja1"/>
+          <circle cx="200" cy="95" r="5" fill="#d9c6d4" class="svg-burbuja2"/>
+          <text x="8%" y="60%" text-anchor="middle" class="svg-estrella1">✦</text>
+          <text x="92%" y="55%" text-anchor="middle" class="svg-estrella2">✦</text>
+          <text x="25%" y="20%" text-anchor="middle" class="svg-estrella3">★</text>
+          <text x="75%" y="88%" text-anchor="middle" class="svg-estrella1">★</text>
+          <text x="50%" y="22%" text-anchor="middle" class="svg-estrella2">✦</text>
+          <text x="50%" y="62%" text-anchor="middle" class="svg-frase">bienvenidx a buttons</text>
+        </svg>
+      </div>
+    </div>
+
+    <!-- PRODUCTOS -->
+    <div class="seccion">
+      <h2 class="seccion-titulo">alt &amp; y2k</h2>
+      <div class="productos-grid" id="grid-alt-y2k"></div>
+    </div>
+    <div class="seccion">
+      <h2 class="seccion-titulo">soft &amp; polka dots</h2>
+      <div class="productos-grid" id="grid-soft-polka"></div>
+    </div>
+    <div class="seccion">
+      <h2 class="seccion-titulo">vintage &amp; 2nd hand</h2>
+      <div class="productos-grid" id="grid-vintage"></div>
+    </div>
+    <div class="seccion">
+      <h2 class="seccion-titulo">midwest &amp; grunge</h2>
+      <div class="productos-grid" id="grid-midwest"></div>
+    </div>
+    <div class="seccion">
+      <h2 class="seccion-titulo">conjuntos completos</h2>
+      <div class="productos-grid" id="grid-conjuntos"></div>
+    </div>
+    <div class="seccion">
+      <h2 class="seccion-titulo">minecraft &amp; stuff</h2>
+      <div class="productos-grid" id="grid-minecraft"></div>
+    </div>
+
+    <!-- CONTACTO -->
+    <div class="seccion contacto-seccion" id="contacto-seccion">
+      <h2 class="seccion-titulo">contacto</h2>
+      <div class="contacto-grid">
+        <a href="https://instagram.com/buttons_py" class="contacto-btn" target="_blank" rel="noopener">
+          <span class="contacto-nombre">instagram</span>
+          <span class="contacto-usuario">@buttons_py</span>
+        </a>
+        <a href="https://wa.me/595981751066" class="contacto-btn" target="_blank" rel="noopener">
+          <span class="contacto-nombre">whatsapp</span>
+          <span class="contacto-usuario">consultas y pedidos</span>
+        </a>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- CARRITO -->
+<button id="carrito-btn" class="carrito-icono" type="button" aria-label="Ver carrito">
+  <img src="assets/img/carrito-boton-2.png" alt="" class="carrito-icono-img">
+  <span class="carrito-contador" id="carrito-contador">0</span>
 </button>
-
-<div id="carrito-overlay" class="carrito-overlay"></div>
-
-<aside id="carrito-panel" class="carrito-panel">
-  <div class="carrito-panel-header">
-    <img src="assets/img/carrito-boton-2.png" alt="Tu Carrito" class="carrito-titulo-img">
-    <button id="carrito-close" class="carrito-close" type="button" aria-label="Cerrar carrito">✕</button>
+<div class="carrito-overlay" id="carrito-overlay"></div>
+<aside class="carrito-panel" id="carrito-panel">
+  <div class="carrito-header">
+    <h3 class="carrito-titulo">✦ mi carrito ♡</h3>
+    <button class="carrito-cerrar" id="carrito-close" type="button">✕</button>
   </div>
-
-  <div class="carrito-items">
-    <div class="carrito-item">
-      <div class="carrito-item-img" style="background:#8a5a7a;"></div>
-      <div class="carrito-item-info">
-        <p class="carrito-item-nombre">Top ejemplo Y2K</p>
-        <p class="carrito-item-detalle">Talle M</p>
-      </div>
-      <p class="carrito-item-precio">$8.000</p>
-    </div>
-    <div class="carrito-item">
-      <div class="carrito-item-img" style="background:#5a3a52;"></div>
-      <div class="carrito-item-info">
-        <p class="carrito-item-nombre">Campera vintage</p>
-        <p class="carrito-item-detalle">Talle S</p>
-      </div>
-      <p class="carrito-item-precio">$15.000</p>
-    </div>
+  <div class="carrito-items" id="carrito-items">
+    <p class="carrito-vacio">tu carrito está vacío ✦</p>
   </div>
-
   <div class="carrito-footer">
-    <div class="carrito-total">
-      <span>Total</span>
-      <span>$23.000</span>
-    </div>
-    <a href="#" class="carrito-checkout">Finalizar Pedido</a>
+    <p class="carrito-total">total: <span id="carrito-total">$0</span></p>
+    <button class="carrito-comprar" id="carrito-comprar" type="button">enviar pedido ♡</button>
   </div>
 </aside>
-
-<section class="tienda-cover">
-  <img src="assets/img/tienda-portada.jpg" alt="Buttons">
-  <h1 class="tienda-logo">Buttons</h1>
-</section>
-
-<main class="tienda-main">
-  <button id="cat-menu-toggle" class="cat-menu-toggle" type="button" aria-expanded="false" aria-controls="cat-tabs-wrapper">
-    <svg class="cat-menu-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
-      <path d="M4 12c2-3 4-3 6 0s4 3 6 0"></path>
-    </svg>
-    <span class="cat-menu-label">Categorías</span>
-    <svg class="cat-menu-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round">
-      <path d="M4 12c2-3 4-3 6 0s4 3 6 0"></path>
-    </svg>
-  </button>
-
-  <div id="cat-tabs-wrapper" class="cat-tabs-wrapper">
-    <nav class="cat-tabs" id="cat-tabs"></nav>
-  </div>
-
-  <div class="subcat-chips" id="subcat-chips"></div>
-  <div class="productos-grid" id="productos-grid">
-    <p class="productos-empty">Elegí una categoría para ver las prendas ✦</p>
-  </div>
-</main>
-
-<section class="galeria">
-  <h2 class="galeria-titulo">Destacados</h2>
-  <div class="galeria-viewport">
-    <div class="galeria-track" id="galeria-track"></div>
-  </div>
-</section>
-
-<footer class="tienda-footer">
-  <a href="https://wa.me/595981751066" class="footer-link" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M20 11.5a8 8 0 1 1-3.6-6.7L20 4l-1 3.5a8 8 0 0 1 1 4z"></path>
-      <path d="M8.5 9.5c.3 2.5 2.5 4.7 5 5"></path>
-    </svg>
-    <span>WhatsApp</span>
-  </a>
-  <a href="https://instagram.com/buttons_py" class="footer-link" target="_blank" rel="noopener">
-    <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-      <rect x="3.5" y="3.5" width="17" height="17" rx="5"></rect>
-      <circle cx="12" cy="12" r="4"></circle>
-      <circle cx="17" cy="7" r="0.8" fill="currentColor" stroke="none"></circle>
-    </svg>
-    <span>@buttons_py</span>
-  </a>
-  <p class="footer-note">— presioná una opción ✦</p>
-</footer>
 
 <script src="productos-data.js"></script>
 <script src="tienda.js"></script>
