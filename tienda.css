@@ -12,6 +12,13 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Dot Gothic';
+  src: url('assets/fonts/DotGothic16Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .tienda-body {
   background-color: #efdade;
   background-image: url('assets/img/fondo-rosa.jpg');
@@ -24,6 +31,10 @@
 .producto-body,
 .producto-body * {
   font-family: 'Kiwi', 'Cormorant Garamond', serif !important;
+}
+
+.producto-body .producto-descripcion {
+  font-family: 'Dot Gothic', 'Cormorant Garamond', serif !important;
 }
 
 html {
@@ -97,9 +108,9 @@ html {
   width: 100%;
   background: #f5c8dc;
   color: #1a1a1a;
-  font-family: 'Cormorant Garamond', serif;
-  letter-spacing: 2px;
-  font-size: 0.9rem;
+  font-family: 'Dot Gothic', 'Cormorant Garamond', serif;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
   padding: 6px 0;
   overflow: hidden;
   white-space: nowrap;
@@ -753,8 +764,8 @@ html {
 }
 
 .producto-descripcion {
-  font-family: 'Cormorant Garamond', serif;
-  font-size: 1.05rem;
+  font-family: 'Dot Gothic', 'Cormorant Garamond', serif;
+  font-size: 0.95rem;
   line-height: 1.7;
   color: #1a1a1a;
   margin-bottom: 28px;
