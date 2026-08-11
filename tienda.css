@@ -138,8 +138,9 @@ html {
 /* ===== MARQUESINA ===== */
 .marquee-wrapper {
   width: 100%;
-  background: #f5c8dc;
-  color: #1a1a1a;
+  background: #6e6e6e;
+  color: #ffffff;
+  text-shadow: 0 0 6px rgba(255,255,255,0.7);
   font-family: 'Dot Gothic', 'Cormorant Garamond', serif;
   letter-spacing: 1px;
   font-size: 0.85rem;
@@ -349,7 +350,7 @@ html {
 }
 
 .seccion {
-  background: #ecd9e2;
+  background: transparent;
   border: 2px solid #1a1a1a;
   outline: 1px solid rgba(26,26,26,0.3);
   outline-offset: 2px;
