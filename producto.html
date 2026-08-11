@@ -21,10 +21,29 @@
 
 <header class="producto-top">
   <a href="tienda.html" class="producto-back">← volver a la tienda</a>
-  <img src="assets/img/carrito-boton-2.png" alt="Buttons" style="height:40px;">
 </header>
 
 <main id="producto-page" class="producto-page"></main>
+
+<!-- CARRITO -->
+<button id="carrito-btn" class="carrito-icono" type="button" aria-label="Ver carrito">
+  <img src="assets/img/carrito-boton-2.png" alt="" class="carrito-icono-img">
+  <span class="carrito-contador" id="carrito-contador">0</span>
+</button>
+<div class="carrito-overlay" id="carrito-overlay"></div>
+<aside class="carrito-panel" id="carrito-panel">
+  <div class="carrito-header">
+    <h3 class="carrito-titulo">✦ mi carrito ♡</h3>
+    <button class="carrito-cerrar" id="carrito-close" type="button">✕</button>
+  </div>
+  <div class="carrito-items" id="carrito-items">
+    <p class="carrito-vacio">tu carrito está vacío ✦</p>
+  </div>
+  <div class="carrito-footer">
+    <p class="carrito-total">total: <span id="carrito-total">$0</span></p>
+    <button class="carrito-comprar" id="carrito-comprar" type="button">enviar pedido ♡</button>
+  </div>
+</aside>
 
 <footer class="tienda-footer">
   <a href="https://wa.me/595981751066" class="footer-link" target="_blank" rel="noopener">
@@ -45,6 +64,7 @@
 </footer>
 
 <script src="productos-data.js"></script>
+<script src="carrito.js"></script>
 <script src="producto.js"></script>
 <script src="transitions.js"></script>
 

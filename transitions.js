@@ -1,5 +1,6 @@
 (function () {
-  window.addEventListener('load', function () {
+  window.addEventListener('pageshow', function () {
+    document.body.classList.remove('page-leaving');
     document.body.classList.add('page-loaded');
   });
 

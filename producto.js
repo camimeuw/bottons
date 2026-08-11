@@ -18,5 +18,12 @@
     '<h1 class="producto-nombre">' + producto.nombre + '</h1>' +
     '<p class="producto-precio">' + producto.precio + '</p>' +
     '<p class="producto-descripcion">' + producto.detalle + '</p>' +
-    '<button class="producto-agregar" type="button">Agregar al Carrito</button>';
+    '<button class="producto-agregar" type="button" id="producto-agregar-btn">Agregar al Carrito</button>';
+
+  const agregarBtn = document.getElementById("producto-agregar-btn");
+  if (agregarBtn) {
+    agregarBtn.addEventListener("click", () => {
+      if (window.Carrito) window.Carrito.agregar(producto);
+    });
+  }
 })();
