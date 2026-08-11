@@ -6,10 +6,10 @@
 }
 
 .tienda-body {
-  background-color: #4a2e45;
-  background-image: url('assets/img/bg-texture.jpg');
+  background-color: #efdade;
+  background-image: url('assets/img/fondo-rosa.jpg');
   background-repeat: repeat;
-  background-size: 500px auto;
+  background-size: 460px auto;
   min-height: 100vh;
   font-size: 12px;
 }
@@ -39,7 +39,7 @@ html {
   left: 0;
   width: 100%;
   height: 90px;
-  background: linear-gradient(transparent, #4a2e45);
+  background: linear-gradient(transparent, #efdade);
 }
 
 .banner-img {
@@ -847,7 +847,7 @@ html {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1rem;
   letter-spacing: 1px;
-  color: #e6d9e3;
+  color: #6b3f5c;
   text-decoration: none;
   opacity: 0.85;
   transition: opacity 0.25s ease;
@@ -866,8 +866,8 @@ html {
   width: 100%;
   height: 320px;
   border-radius: 10px;
-  border: 1px solid rgba(255,255,255,0.15);
-  box-shadow: 0 6px 24px rgba(0,0,0,0.4);
+  border: 1px solid rgba(0,0,0,0.12);
+  box-shadow: 0 6px 24px rgba(0,0,0,0.25);
   margin-bottom: 24px;
 }
 
@@ -875,14 +875,14 @@ html {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 500;
   font-size: 1.6rem;
-  color: #f4ecf3;
+  color: #4a2748;
   margin-bottom: 10px;
 }
 
 .producto-precio {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.3rem;
-  color: #e8bfe0;
+  color: #a24a7a;
   margin-bottom: 18px;
 }
 
@@ -890,7 +890,7 @@ html {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.05rem;
   line-height: 1.7;
-  color: #d9c6d4;
+  color: #6b4a5c;
   margin-bottom: 28px;
 }
 
@@ -916,7 +916,7 @@ html {
 .producto-no-encontrado {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.1rem;
-  color: #d9c6d4;
+  color: #6b4a5c;
   text-align: center;
   padding: 60px 8%;
 }
@@ -928,7 +928,7 @@ html {
   gap: 18px;
   padding: 50px 8% 60px;
   margin-top: 30px;
-  border-top: 1px dashed rgba(232,191,224,0.25);
+  border-top: 1px dashed rgba(162,74,122,0.3);
 }
 
 .footer-link {
@@ -938,18 +938,18 @@ html {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.1rem;
   letter-spacing: 2px;
-  color: #e6d9e3;
+  color: #6b3f5c;
   text-decoration: none;
   transition: color 0.25s ease, transform 0.2s ease;
 }
 
-.footer-link:hover { color: #fff; transform: translateY(-2px); }
+.footer-link:hover { color: #2f1530; transform: translateY(-2px); }
 
 .footer-note {
   font-family: 'Cormorant Garamond', serif;
   font-size: 0.75rem;
   letter-spacing: 3px;
-  color: #8a7385;
+  color: #8a6b78;
   margin-top: 12px;
 }
 
