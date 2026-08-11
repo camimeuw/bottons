@@ -36,7 +36,7 @@ html {
   height: 320px;
   position: relative;
   overflow: hidden;
-  border-bottom: 3px double #ff4fa1;
+  border-bottom: 3px double #1a1a1a;
 }
 
 .banner::after {
@@ -87,7 +87,7 @@ html {
 .banner-svg-borde {
   font-family: 'Angelic War', 'Cormorant Garamond', cursive;
   font-size: 130px;
-  stroke: #000000;
+  stroke: #1a1a1a;
   stroke-width: 4px;
   stroke-linejoin: round;
 }
@@ -95,16 +95,16 @@ html {
 /* ===== MARQUESINA ===== */
 .marquee-wrapper {
   width: 100%;
-  background: #0d0d0d;
-  color: #ffffff;
+  background: #f5c8dc;
+  color: #1a1a1a;
   font-family: 'Cormorant Garamond', serif;
   letter-spacing: 2px;
   font-size: 0.9rem;
   padding: 6px 0;
   overflow: hidden;
   white-space: nowrap;
-  border-top: 2px solid #ff4fa1;
-  border-bottom: 2px solid #ff4fa1;
+  border-top: 2px solid #1a1a1a;
+  border-bottom: 2px solid #1a1a1a;
 }
 
 .marquee-track {
@@ -121,18 +121,18 @@ html {
 .menu-mobile-wrapper {
   display: none;
   flex-direction: column;
-  background: #0d0d0d;
-  border-bottom: 2px solid #ff4fa1;
+  background: #ecd9e2;
+  border-bottom: 2px solid #1a1a1a;
 }
 
 .menu-hamburguesa {
   font-family: 'Grape Soda', 'Cormorant Garamond', cursive;
   letter-spacing: 2px;
   font-size: 1.1rem;
-  color: #ffffff;
-  background: #0d0d0d;
+  color: #1a1a1a;
+  background: #e0b8cc;
   border: none;
-  border-bottom: 1px solid #ff4fa1;
+  border-bottom: 1px solid #1a1a1a;
   padding: 10px 16px;
   text-align: left;
   cursor: pointer;
@@ -152,14 +152,14 @@ html {
   font-family: 'Grape Soda', 'Cormorant Garamond', cursive;
   letter-spacing: 1px;
   font-size: 1rem;
-  color: #ffffff;
+  color: #1a1a1a;
   text-decoration: none;
   padding: 8px 12px;
-  border: 1px solid #ff4fa1;
-  background: #0d0d0d;
+  border: 1px solid #1a1a1a;
+  background: #e0b8cc;
 }
 
-.menu-mobile a:hover { background: #ff4fa1; color: #000000; }
+.menu-mobile a:hover { background: #2a2220; color: #f2ead9; }
 
 /* ===== LAYOUT ===== */
 .tienda-grid {
@@ -172,24 +172,24 @@ html {
 }
 
 .sidebar {
-  background: #0d0d0d;
-  border: 2px solid #ff4fa1;
-  outline: 1px solid rgba(255,79,161,0.4);
+  background: #ecd9e2;
+  border: 2px solid #1a1a1a;
+  outline: 1px solid rgba(26,26,26,0.3);
   outline-offset: 2px;
   display: flex;
   flex-direction: column;
   gap: 8px;
   padding: 8px;
-  box-shadow: 2px 0px 8px rgba(0,0,0,0.35);
+  box-shadow: 2px 0px 8px rgba(0,0,0,0.2);
 }
 
 .sidebar-titulo {
   font-family: 'Grape Soda', 'Cormorant Garamond', cursive;
   font-size: 1.5rem;
-  color: #ffffff;
+  color: #1a1a1a;
   margin: 0 0 6px 0;
   text-align: center;
-  border-bottom: 1px solid rgba(255,79,161,0.4);
+  border-bottom: 1px solid rgba(26,26,26,0.3);
   padding-bottom: 4px;
 }
 
@@ -203,7 +203,7 @@ html {
   font-family: 'Grape Soda', 'Cormorant Garamond', cursive;
   letter-spacing: 1px;
   font-size: 1rem;
-  color: #ff9ecb;
+  color: #1a1a1a;
   text-decoration: none;
   padding: 6px 8px;
   border-left: 3px solid transparent;
@@ -212,19 +212,19 @@ html {
 }
 
 .sidebar-link:hover {
-  border-left: 3px solid #ff4fa1;
-  background: #1a1210;
-  color: #ffffff;
+  border-left: 3px solid #8a2a55;
+  background: #e0b8cc;
+  color: #1a1a1a;
   padding-left: 12px;
 }
 
 .sidebar-info {
-  background: #1a1210;
-  border: 1px solid rgba(255,79,161,0.4);
+  background: #e0b8cc;
+  border: 1px solid #1a1a1a;
   padding: 8px;
   font-family: 'Cormorant Garamond', serif;
   font-size: 0.85rem;
-  color: #ff9ecb;
+  color: #1a1a1a;
   display: flex;
   flex-direction: column;
   gap: 4px;
@@ -238,8 +238,8 @@ html {
 .anime-placeholder {
   width: 130px;
   height: 160px;
-  background: #1a1210;
-  border: 2px dashed rgba(255,79,161,0.5);
+  background: #e0b8cc;
+  border: 2px dashed #1a1a1a;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -254,8 +254,8 @@ html {
 }
 
 .contador {
-  background: #000000;
-  border: 1px solid #ff4fa1;
+  background: #e0b8cc;
+  border: 1px solid #1a1a1a;
   padding: 6px;
   text-align: center;
 }
@@ -264,17 +264,16 @@ html {
   font-family: 'Cormorant Garamond', serif;
   letter-spacing: 1px;
   font-size: 0.75rem;
-  color: #ff4fa1;
+  color: #8a2a55;
   margin: 0;
 }
 
 .contador-numero {
   font-family: monospace;
   font-size: 1.1rem;
-  color: #ffffff;
+  color: #1a1a1a;
   margin: 0;
   letter-spacing: 3px;
-  text-shadow: 0 0 6px rgba(255,79,161,0.6);
 }
 
 .sidebar-redes {
@@ -290,15 +289,15 @@ html {
   font-family: 'Cormorant Garamond', serif;
   letter-spacing: 1px;
   font-size: 0.85rem;
-  color: #ffffff;
-  background: #1a1210;
-  border: 1px solid rgba(255,79,161,0.4);
+  color: #1a1a1a;
+  background: #e0b8cc;
+  border: 1px solid #1a1a1a;
   padding: 4px;
   text-decoration: none;
   transition: all 0.2s ease;
 }
 
-.red-btn:hover { background: #ff4fa1; color: #000000; }
+.red-btn:hover { background: #2a2220; color: #f2ead9; }
 
 .contenido {
   display: flex;
@@ -307,9 +306,9 @@ html {
 }
 
 .seccion {
-  background: #0d0d0d;
-  border: 2px solid #ff4fa1;
-  outline: 1px solid rgba(255,79,161,0.4);
+  background: #ecd9e2;
+  border: 2px solid #1a1a1a;
+  outline: 1px solid rgba(26,26,26,0.3);
   outline-offset: 2px;
   padding: 12px;
 }
@@ -317,10 +316,10 @@ html {
 .seccion-titulo {
   font-family: 'Angelic War', 'Cormorant Garamond', cursive;
   font-size: 1.7rem;
-  color: #ffffff;
+  color: #1a1a1a;
   margin: 0 0 12px 0;
   padding-bottom: 6px;
-  border-bottom: 1px dashed rgba(255,79,161,0.4);
+  border-bottom: 1px dashed rgba(26,26,26,0.3);
 }
 
 /* ===== DESTACADOS ===== */
@@ -356,13 +355,13 @@ html {
   width: 90px;
   height: 110px;
   border-radius: 4px;
-  border: 1px solid rgba(255,79,161,0.4);
+  border: 1px solid #1a1a1a;
 }
 
 .destacado-card-nombre {
   font-family: 'Kiwi', cursive;
   font-size: 0.6rem;
-  color: #ffffff;
+  color: #1a1a1a;
   margin: 6px 0 0;
   line-height: 1.3;
 }
@@ -370,7 +369,7 @@ html {
 .destacado-card-precio {
   font-family: 'Kiwi', cursive;
   font-size: 0.6rem;
-  color: #ff4fa1;
+  color: #8a2a55;
   margin: 2px 0 0;
 }
 
@@ -393,12 +392,12 @@ html {
 .svg-frase {
   font-family: 'Grape Soda', 'Cormorant Garamond', cursive;
   font-size: 30px;
-  fill: #ffffff;
+  fill: #1a1a1a;
 }
 
-.svg-estrella1 { font-size: 22px; fill: #ff4fa1; animation: flotar2 3s ease-in-out infinite; }
-.svg-estrella2 { font-size: 18px; fill: #ffffff; animation: flotar2 4s ease-in-out infinite 0.5s; }
-.svg-estrella3 { font-size: 18px; fill: #ff4fa1; animation: flotar2 3.5s ease-in-out infinite 1s; }
+.svg-estrella1 { font-size: 22px; fill: #8a2a55; animation: flotar2 3s ease-in-out infinite; }
+.svg-estrella2 { font-size: 18px; fill: #1a1a1a; animation: flotar2 4s ease-in-out infinite 0.5s; }
+.svg-estrella3 { font-size: 18px; fill: #8a2a55; animation: flotar2 3.5s ease-in-out infinite 1s; }
 .svg-burbuja1 { animation: flotar2 3s ease-in-out infinite; }
 .svg-burbuja2 { animation: flotar2 4s ease-in-out infinite 0.5s; }
 .svg-burbuja3 { animation: flotar2 3.5s ease-in-out infinite 1s; }
@@ -421,14 +420,14 @@ html {
   font-family: 'Cormorant Garamond', serif;
   font-size: 0.95rem;
   letter-spacing: 1px;
-  color: #ff9ecb;
+  color: #1a1a1a;
   text-align: center;
   padding: 20px 0;
 }
 
 .producto-card {
-  background: #1a1210;
-  border: 1px solid rgba(255,79,161,0.4);
+  background: #e0b8cc;
+  border: 1px solid #1a1a1a;
   padding: 8px;
   text-align: center;
   display: flex;
@@ -438,7 +437,7 @@ html {
   transition: all 0.2s ease;
 }
 
-.producto-card:hover { border-color: #ff4fa1; transform: translateY(-2px); }
+.producto-card:hover { border-color: #8a2a55; transform: translateY(-2px); }
 
 .card-link {
   display: flex;
@@ -452,35 +451,35 @@ html {
 .card-imagen {
   width: 100%;
   height: 140px;
-  border: 1px solid rgba(255,79,161,0.3);
+  border: 1px solid #1a1a1a;
 }
 
 .card-nombre {
   font-family: 'Kiwi', cursive;
   font-size: 0.85rem;
-  color: #ffffff;
+  color: #1a1a1a;
   margin: 0;
 }
 
 .card-precio {
   font-family: 'Kiwi', cursive;
   font-size: 0.8rem;
-  color: #ff4fa1;
+  color: #8a2a55;
   margin: 0;
 }
 
 .card-btn {
   font-family: 'Kiwi', cursive;
   font-size: 0.75rem;
-  color: #ffffff;
-  background: #000000;
-  border: 1px solid rgba(255,79,161,0.5);
+  color: #1a1a1a;
+  background: #ecd9e2;
+  border: 1px solid #1a1a1a;
   padding: 4px 12px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
-.card-btn:hover { background: #ff4fa1; color: #000000; }
+.card-btn:hover { background: #2a2220; color: #f2ead9; }
 
 /* ===== CONTACTO ===== */
 .contacto-grid {
@@ -495,25 +494,29 @@ html {
   align-items: center;
   gap: 6px;
   padding: 12px 8px;
-  background: #1a1210;
-  border: 1px solid rgba(255,79,161,0.4);
+  background: #e0b8cc;
+  border: 1px solid #1a1a1a;
   text-decoration: none;
   transition: all 0.2s ease;
 }
 
-.contacto-btn:hover { border-color: #ff4fa1; transform: translateY(-2px); background: #241a18; }
+.contacto-btn:hover { border-color: #8a2a55; transform: translateY(-2px); background: #2a2220; }
+.contacto-btn:hover .contacto-nombre,
+.contacto-btn:hover .contacto-usuario { color: #f2ead9; }
 
 .contacto-nombre {
   font-family: 'Cormorant Garamond', serif;
   letter-spacing: 1px;
   font-size: 0.95rem;
-  color: #ffffff;
+  color: #1a1a1a;
+  transition: color 0.2s ease;
 }
 
 .contacto-usuario {
   font-family: 'Kiwi', cursive;
   font-size: 0.75rem;
-  color: #ff9ecb;
+  color: #8a2a55;
+  transition: color 0.2s ease;
 }
 
 /* ===== CARRITO ===== */
@@ -528,7 +531,7 @@ html {
   background: none;
   padding: 0;
   cursor: pointer;
-  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.6));
+  filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
   transition: transform 0.2s ease;
 }
 
@@ -549,14 +552,14 @@ html {
   height: 18px;
   padding: 0 4px;
   border-radius: 50%;
-  background: #ff4fa1;
-  color: #000000;
+  background: #8a2a55;
+  color: #f2ead9;
   font-family: monospace;
   font-size: 0.7rem;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #000000;
+  border: 1px solid #1a1a1a;
 }
 
 .carrito-overlay {
@@ -564,7 +567,7 @@ html {
   position: fixed;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background: rgba(0,0,0,0.55);
+  background: rgba(0,0,0,0.45);
   z-index: 998;
 }
 
@@ -576,13 +579,13 @@ html {
   right: -320px;
   width: 300px;
   height: 100vh;
-  background-color: #0d0d0d;
+  background-color: #ecd9e2;
   background-image:
-    linear-gradient(rgba(0,0,0,0.82), rgba(0,0,0,0.82)),
+    linear-gradient(rgba(236,217,226,0.9), rgba(236,217,226,0.9)),
     url('assets/img/carrito-fondo.jpg');
   background-size: cover;
   background-position: center;
-  border-left: 2px solid #ff4fa1;
+  border-left: 2px solid #1a1a1a;
   z-index: 1000;
   display: flex;
   flex-direction: column;
@@ -596,20 +599,20 @@ html {
   justify-content: space-between;
   align-items: center;
   padding: 16px;
-  border-bottom: 1px dashed rgba(255,79,161,0.4);
+  border-bottom: 1px dashed #1a1a1a;
 }
 
 .carrito-titulo {
   font-family: 'Angelic War', 'Cormorant Garamond', cursive;
   font-size: 1.2rem;
-  color: #ffffff;
+  color: #1a1a1a;
   margin: 0;
 }
 
 .carrito-cerrar {
   background: none;
-  border: 1px solid rgba(255,79,161,0.5);
-  color: #ffffff;
+  border: 1px solid #1a1a1a;
+  color: #1a1a1a;
   font-size: 0.9rem;
   padding: 4px 8px;
   cursor: pointer;
@@ -626,15 +629,15 @@ html {
 
 .carrito-vacio {
   text-align: center;
-  color: #ff9ecb;
+  color: #1a1a1a;
   font-family: 'Cormorant Garamond', serif;
   font-size: 0.9rem;
   margin-top: 40px;
 }
 
 .carrito-item {
-  background: rgba(0,0,0,0.55);
-  border: 1px solid rgba(255,79,161,0.3);
+  background: #e0b8cc;
+  border: 1px solid #1a1a1a;
   padding: 10px;
   display: flex;
   flex-direction: column;
@@ -644,17 +647,17 @@ html {
 .carrito-item-nombre {
   font-family: 'Cormorant Garamond', serif;
   font-size: 0.9rem;
-  color: #ffffff;
+  color: #1a1a1a;
   margin: 0;
 }
 
-.carrito-item-precio { font-size: 0.8rem; color: #ff4fa1; margin: 0; }
+.carrito-item-precio { font-size: 0.8rem; color: #8a2a55; margin: 0; }
 .carrito-item-controles { display: flex; align-items: center; gap: 8px; }
 
 .carrito-item-btn {
-  background: #000000;
-  border: 1px solid rgba(255,79,161,0.5);
-  color: #ffffff;
+  background: #ecd9e2;
+  border: 1px solid #1a1a1a;
+  color: #1a1a1a;
   width: 22px;
   height: 22px;
   font-size: 0.85rem;
@@ -664,20 +667,20 @@ html {
   justify-content: center;
 }
 
-.carrito-item-btn:hover { background: #ff4fa1; color: #000000; }
-.carrito-item-cantidad { font-size: 0.85rem; color: #ffffff; min-width: 20px; text-align: center; }
-.carrito-item-eliminar { margin-left: auto; background: none; border: none; color: #ff9ecb; font-size: 0.8rem; cursor: pointer; }
-.carrito-item-eliminar:hover { color: #ffffff; }
+.carrito-item-btn:hover { background: #2a2220; color: #f2ead9; }
+.carrito-item-cantidad { font-size: 0.85rem; color: #1a1a1a; min-width: 20px; text-align: center; }
+.carrito-item-eliminar { margin-left: auto; background: none; border: none; color: #8a2a55; font-size: 0.8rem; cursor: pointer; }
+.carrito-item-eliminar:hover { color: #1a1a1a; }
 
 .carrito-footer {
   padding: 16px;
-  border-top: 1px dashed rgba(255,79,161,0.4);
+  border-top: 1px dashed #1a1a1a;
 }
 
 .carrito-total {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1rem;
-  color: #ffffff;
+  color: #1a1a1a;
   margin: 0 0 10px 0;
   text-align: right;
 }
@@ -687,15 +690,15 @@ html {
   letter-spacing: 2px;
   text-transform: uppercase;
   font-size: 1rem;
-  color: #000000;
-  background: #ff4fa1;
+  color: #f2ead9;
+  background: #8a2a55;
   border: none;
   padding: 10px;
   cursor: pointer;
   width: 100%;
 }
 
-.carrito-comprar:hover { opacity: 0.85; }
+.carrito-comprar:hover { background: #6e2044; }
 
 /* ===== PÁGINA DE PRODUCTO (producto.html) ===== */
 .producto-top {
@@ -709,7 +712,7 @@ html {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1rem;
   letter-spacing: 1px;
-  color: #c81866;
+  color: #8a2a55;
   text-decoration: none;
   opacity: 0.85;
   transition: opacity 0.25s ease;
@@ -728,8 +731,8 @@ html {
   width: 100%;
   height: 320px;
   border-radius: 10px;
-  border: 1px solid rgba(0,0,0,0.12);
-  box-shadow: 0 6px 24px rgba(0,0,0,0.25);
+  border: 1px solid #1a1a1a;
+  box-shadow: 0 6px 24px rgba(0,0,0,0.2);
   margin-bottom: 24px;
 }
 
@@ -737,14 +740,14 @@ html {
   font-family: 'Cormorant Garamond', serif;
   font-weight: 500;
   font-size: 1.6rem;
-  color: #150608;
+  color: #1a1a1a;
   margin-bottom: 10px;
 }
 
 .producto-precio {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.3rem;
-  color: #c81866;
+  color: #8a2a55;
   margin-bottom: 18px;
 }
 
@@ -761,8 +764,8 @@ html {
   font-size: 1.05rem;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: #000000;
-  background: #ff4fa1;
+  color: #f2ead9;
+  background: #8a2a55;
   border: none;
   padding: 14px 30px;
   border-radius: 2px;
@@ -771,7 +774,7 @@ html {
 }
 
 .producto-agregar:hover {
-  background: #ff85bf;
+  background: #6e2044;
   letter-spacing: 4px;
 }
 
@@ -790,7 +793,7 @@ html {
   gap: 18px;
   padding: 50px 8% 60px;
   margin-top: 30px;
-  border-top: 1px dashed rgba(200,24,102,0.3);
+  border-top: 1px dashed #1a1a1a;
 }
 
 .footer-link {
@@ -800,18 +803,18 @@ html {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.1rem;
   letter-spacing: 2px;
-  color: #c81866;
+  color: #8a2a55;
   text-decoration: none;
   transition: color 0.25s ease, transform 0.2s ease;
 }
 
-.footer-link:hover { color: #000000; transform: translateY(-2px); }
+.footer-link:hover { color: #1a1a1a; transform: translateY(-2px); }
 
 .footer-note {
   font-family: 'Cormorant Garamond', serif;
   font-size: 0.75rem;
   letter-spacing: 3px;
-  color: #5a5a5a;
+  color: #6a6a6a;
   margin-top: 12px;
 }
 
