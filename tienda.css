@@ -70,18 +70,50 @@ html {
 
 .banner-overlay {
   position: absolute;
-  left: 30px;
-  top: 42%;
-  transform: translateY(-50%);
-  text-align: left;
+  left: 50%;
+  top: 22px;
+  transform: translateX(-50%);
+  text-align: center;
+  z-index: 2;
   animation: flotar 3s ease-in-out infinite;
 }
 
 @keyframes flotar {
-  0% { transform: translateY(-50%); }
-  50% { transform: translateY(calc(-50% - 10px)); }
-  100% { transform: translateY(-50%); }
+  0% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(-10px); }
+  100% { transform: translateX(-50%) translateY(0); }
 }
+
+.banner-social {
+  position: absolute;
+  left: 24px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 2;
+}
+
+.banner-social-link {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #e0b8cc;
+  border: 1.5px solid #1a1a1a;
+  color: #1a1a1a;
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.banner-social-link svg { flex-shrink: 0; }
+
+.banner-social-link:hover { background: #1a1a1a; color: #f2ead9; }
 
 .banner-svg {
   width: 560px;
@@ -493,44 +525,6 @@ html {
 
 .card-btn:hover { background: #2a2220; color: #f2ead9; }
 
-/* ===== CONTACTO ===== */
-.contacto-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 10px;
-}
-
-.contacto-btn {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 6px;
-  padding: 12px 8px;
-  background: #e0b8cc;
-  border: 1px solid #1a1a1a;
-  text-decoration: none;
-  transition: all 0.2s ease;
-}
-
-.contacto-btn:hover { border-color: #8a2a55; transform: translateY(-2px); background: #2a2220; }
-.contacto-btn:hover .contacto-nombre,
-.contacto-btn:hover .contacto-usuario { color: #f2ead9; }
-
-.contacto-nombre {
-  font-family: 'Cormorant Garamond', serif;
-  letter-spacing: 1px;
-  font-size: 0.95rem;
-  color: #1a1a1a;
-  transition: color 0.2s ease;
-}
-
-.contacto-usuario {
-  font-family: 'Kiwi', cursive;
-  font-size: 0.75rem;
-  color: #8a2a55;
-  transition: color 0.2s ease;
-}
-
 /* ===== CARRITO ===== */
 .carrito-icono {
   position: fixed;
@@ -835,11 +829,13 @@ html {
   .tienda-grid { grid-template-columns: minmax(0, 1fr); }
   .sidebar { display: none; }
   .banner { height: 220px; }
-  .banner-overlay { top: 45%; left: 10px; }
+  .banner-overlay { top: 12px; }
   .banner-svg { width: 100%; }
   .banner-svg-texto, .banner-svg-borde { font-size: 90px; }
+  .banner-social { left: 14px; gap: 8px; }
+  .banner-social-link { padding: 5px 10px; font-size: 0.75rem; gap: 6px; }
+  .banner-social-link svg { width: 16px; height: 16px; }
   .productos-grid { grid-template-columns: repeat(2, 1fr); }
   .carrito-panel { width: 100%; right: -100%; }
-  .contacto-grid { grid-template-columns: 1fr; }
   .menu-mobile-wrapper { display: flex; }
 }
