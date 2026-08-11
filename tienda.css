@@ -314,8 +314,9 @@ html {
 }
 
 .seccion-titulo {
-  font-family: 'Angelic War', 'Cormorant Garamond', cursive;
-  font-size: 1.7rem;
+  font-family: 'Grape Soda', 'Cormorant Garamond', cursive;
+  font-size: 1.6rem;
+  letter-spacing: 1px;
   color: #1a1a1a;
   margin: 0 0 12px 0;
   padding-bottom: 6px;
