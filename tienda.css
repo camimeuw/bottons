@@ -86,32 +86,32 @@ html {
 
 .banner-social {
   position: absolute;
-  left: 24px;
+  left: 20px;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 6px;
   z-index: 2;
 }
 
 .banner-social-link {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 5px;
   background: #e0b8cc;
-  border: 1.5px solid #1a1a1a;
+  border: 1px solid #1a1a1a;
   color: #1a1a1a;
-  padding: 6px 14px;
-  border-radius: 20px;
+  padding: 3px 9px;
+  border-radius: 16px;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 0.85rem;
-  letter-spacing: 1px;
+  font-size: 0.65rem;
+  letter-spacing: 0.5px;
   text-decoration: none;
   transition: all 0.2s ease;
 }
 
-.banner-social-link svg { flex-shrink: 0; }
+.banner-social-link svg { flex-shrink: 0; width: 13px; height: 13px; }
 
 .banner-social-link:hover { background: #1a1a1a; color: #f2ead9; }
 
@@ -856,9 +856,9 @@ html {
   .banner-overlay { top: 12px; }
   .banner-svg { width: 100%; }
   .banner-svg-texto, .banner-svg-borde { font-size: 132px; }
-  .banner-social { left: 14px; gap: 8px; }
-  .banner-social-link { padding: 5px 10px; font-size: 0.75rem; gap: 6px; }
-  .banner-social-link svg { width: 16px; height: 16px; }
+  .banner-social { left: 12px; gap: 5px; }
+  .banner-social-link { padding: 3px 8px; font-size: 0.6rem; gap: 4px; }
+  .banner-social-link svg { width: 11px; height: 11px; }
   .productos-grid { grid-template-columns: repeat(2, 1fr); }
   .carrito-panel { width: 100%; right: -100%; }
   .menu-mobile-wrapper { display: flex; }
