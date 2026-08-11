@@ -80,45 +80,6 @@
     contadorEl.textContent = String(visitas).padStart(6, "0");
   }
 
-  const audio = document.getElementById("bg-music");
-  const playBtn = document.getElementById("play-btn");
-  const ondas = document.getElementById("ondas");
-  const progreso = document.getElementById("mp3-progreso");
-  const tiempo = document.getElementById("mp3-tiempo");
-
-  function formatoTiempo(s) {
-    if (!isFinite(s)) return "0:00";
-    const m = Math.floor(s / 60);
-    const sec = Math.floor(s % 60).toString().padStart(2, "0");
-    return m + ":" + sec;
-  }
-
-  if (audio && playBtn) {
-    playBtn.addEventListener("click", () => {
-      if (audio.paused) {
-        audio.play().catch(() => {});
-        playBtn.textContent = "⏸";
-        if (ondas) ondas.classList.add("activo");
-      } else {
-        audio.pause();
-        playBtn.textContent = "▶";
-        if (ondas) ondas.classList.remove("activo");
-      }
-    });
-
-    audio.addEventListener("timeupdate", () => {
-      if (progreso && audio.duration) {
-        progreso.style.width = (audio.currentTime / audio.duration) * 100 + "%";
-      }
-      if (tiempo) tiempo.textContent = formatoTiempo(audio.currentTime);
-    });
-
-    audio.addEventListener("ended", () => {
-      playBtn.textContent = "▶";
-      if (ondas) ondas.classList.remove("activo");
-    });
-  }
-
   // ===== CARRITO =====
   let carrito = [];
 
