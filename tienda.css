@@ -116,20 +116,20 @@ html {
 .banner-social-link:hover { background: #1a1a1a; color: #f2ead9; }
 
 .banner-svg {
-  width: 560px;
-  max-width: 90vw;
+  width: 650px;
+  max-width: 92vw;
   height: auto;
   overflow: visible;
 }
 
 .banner-svg-texto {
   font-family: 'Angelic War', 'Cormorant Garamond', cursive;
-  font-size: 130px;
+  font-size: 155px;
 }
 
 .banner-svg-borde {
   font-family: 'Angelic War', 'Cormorant Garamond', cursive;
-  font-size: 130px;
+  font-size: 155px;
   stroke: #1a1a1a;
   stroke-width: 4px;
   stroke-linejoin: round;
@@ -453,6 +453,27 @@ html {
   100% { transform: translateY(0px); }
 }
 
+/* ===== SUBCATEGORÍAS ===== */
+.subcategorias {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.subcategoria-bloque {
+  padding-top: 6px;
+}
+
+.subcategoria-titulo {
+  font-family: 'Grape Soda', 'Cormorant Garamond', cursive;
+  font-size: 1.05rem;
+  letter-spacing: 1px;
+  color: #8a2a55;
+  margin: 0 0 8px 0;
+  padding-bottom: 4px;
+  border-bottom: 1px dotted rgba(26,26,26,0.4);
+}
+
 /* ===== GRILLA DE PRODUCTOS ===== */
 .productos-grid {
   display: grid;
@@ -463,11 +484,12 @@ html {
 .productos-empty {
   grid-column: 1 / -1;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   letter-spacing: 1px;
   color: #1a1a1a;
+  opacity: 0.7;
   text-align: center;
-  padding: 20px 0;
+  padding: 10px 0;
 }
 
 .producto-card {
@@ -832,7 +854,7 @@ html {
   .banner { height: 220px; }
   .banner-overlay { top: 12px; }
   .banner-svg { width: 100%; }
-  .banner-svg-texto, .banner-svg-borde { font-size: 90px; }
+  .banner-svg-texto, .banner-svg-borde { font-size: 108px; }
   .banner-social { left: 14px; gap: 8px; }
   .banner-social-link { padding: 5px 10px; font-size: 0.75rem; gap: 6px; }
   .banner-social-link svg { width: 16px; height: 16px; }

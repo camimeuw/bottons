@@ -7,7 +7,7 @@
     "Vintage & 2nd Hand": "vintage",
     "Midwest & Grunge": "midwest",
     "Conjuntos Completos": "conjuntos",
-    "Minecraft & Stuff": "minecraft"
+    "Coleccionables y Otros": "coleccionables"
   };
 
   function crearProductoCard(p) {
@@ -25,14 +25,31 @@
   }
 
   (Object.keys(SLUGS)).forEach((cat) => {
-    const grid = document.getElementById("grid-" + SLUGS[cat]);
-    if (!grid) return;
-    const productos = PRODUCTOS.filter((p) => p.categoria === cat);
-    if (!productos.length) {
-      grid.innerHTML = '<p class="productos-empty">próximamente en ' + cat + ' ✦</p>';
-      return;
-    }
-    productos.forEach((p) => grid.appendChild(crearProductoCard(p)));
+    const contenedor = document.getElementById("grid-" + SLUGS[cat]);
+    if (!contenedor) return;
+    const subcategorias = (typeof SUBCATEGORIAS_TIENDA !== "undefined" && SUBCATEGORIAS_TIENDA[cat]) || [];
+
+    subcategorias.forEach((sub) => {
+      const bloque = document.createElement("div");
+      bloque.className = "subcategoria-bloque";
+
+      const titulo = document.createElement("h3");
+      titulo.className = "subcategoria-titulo";
+      titulo.textContent = sub;
+      bloque.appendChild(titulo);
+
+      const grid = document.createElement("div");
+      grid.className = "productos-grid";
+
+      const productos = PRODUCTOS.filter((p) => p.categoria === cat && p.subcategoria === sub);
+      if (productos.length) {
+        productos.forEach((p) => grid.appendChild(crearProductoCard(p)));
+      } else {
+        grid.innerHTML = '<p class="productos-empty">próximamente ✦</p>';
+      }
+      bloque.appendChild(grid);
+      contenedor.appendChild(bloque);
+    });
   });
 
   document.addEventListener("click", (e) => {
