@@ -17,8 +17,8 @@
       <feMorphology operator="erode" radius="0.28"></feMorphology>
     </filter>
     <pattern id="lunares" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
-      <rect width="20" height="20" fill="#4a2e45"/>
-      <circle cx="10" cy="10" r="3.2" fill="#e8bfe0"/>
+      <rect width="20" height="20" fill="#0d0d0d"/>
+      <circle cx="10" cy="10" r="3.2" fill="#ff4fa1"/>
     </pattern>
     <filter id="mano2" x="-10%" y="-10%" width="120%" height="120%">
       <feTurbulence type="turbulence" baseFrequency="0.02" numOctaves="2" result="noise"/>
@@ -92,37 +92,11 @@
 
   <main class="contenido">
 
-    <!-- REPRODUCTOR + DESTACADOS -->
-    <div class="seccion player-seccion">
-      <div class="mp3-caja">
-        <div class="mp3-ondas" id="ondas">
-          <div class="onda"></div>
-          <div class="onda"></div>
-          <div class="onda"></div>
-          <div class="onda"></div>
-          <div class="onda"></div>
-        </div>
-        <div class="mp3-info">
-          <p class="mp3-titulo">buttons radio ♡</p>
-          <p class="mp3-cancion">ambient session ✦</p>
-          <div class="mp3-barra">
-            <div class="mp3-progreso" id="mp3-progreso"></div>
-          </div>
-          <p class="mp3-tiempo" id="mp3-tiempo">0:00</p>
-          <div class="mp3-controles">
-            <button class="mp3-btn mp3-play" id="play-btn" type="button">▶</button>
-          </div>
-        </div>
-      </div>
-      <audio id="bg-music" loop preload="none">
-        <source src="assets/audio/bg-music.mp3" type="audio/mpeg">
-      </audio>
-
-      <div class="destacados-box">
-        <p class="destacados-titulo">✦ destacados</p>
-        <div class="destacados-viewport">
-          <div class="destacados-track" id="destacados-track"></div>
-        </div>
+    <!-- DESTACADOS -->
+    <div class="seccion">
+      <h2 class="seccion-titulo">✦ destacados</h2>
+      <div class="destacados-viewport">
+        <div class="destacados-track" id="destacados-track"></div>
       </div>
     </div>
 
@@ -130,11 +104,11 @@
     <div class="seccion inicio-seccion">
       <div class="inicio-frase">
         <svg viewBox="0 0 400 100" class="inicio-svg">
-          <circle cx="20" cy="15" r="7" fill="#e8bfe0" class="svg-burbuja1"/>
-          <circle cx="385" cy="12" r="5" fill="#d9c6d4" class="svg-burbuja2"/>
-          <circle cx="15" cy="88" r="6" fill="#d9c6d4" class="svg-burbuja3"/>
-          <circle cx="385" cy="85" r="8" fill="#e8bfe0" class="svg-burbuja1"/>
-          <circle cx="200" cy="95" r="5" fill="#d9c6d4" class="svg-burbuja2"/>
+          <circle cx="20" cy="15" r="7" fill="#ff4fa1" class="svg-burbuja1"/>
+          <circle cx="385" cy="12" r="5" fill="#ffffff" class="svg-burbuja2"/>
+          <circle cx="15" cy="88" r="6" fill="#ffffff" class="svg-burbuja3"/>
+          <circle cx="385" cy="85" r="8" fill="#ff4fa1" class="svg-burbuja1"/>
+          <circle cx="200" cy="95" r="5" fill="#ffffff" class="svg-burbuja2"/>
           <text x="8%" y="60%" text-anchor="middle" class="svg-estrella1">✦</text>
           <text x="92%" y="55%" text-anchor="middle" class="svg-estrella2">✦</text>
           <text x="25%" y="20%" text-anchor="middle" class="svg-estrella3">★</text>
