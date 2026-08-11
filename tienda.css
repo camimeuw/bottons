@@ -116,20 +116,20 @@ html {
 .banner-social-link:hover { background: #1a1a1a; color: #f2ead9; }
 
 .banner-svg {
-  width: 650px;
-  max-width: 92vw;
+  width: 740px;
+  max-width: 94vw;
   height: auto;
   overflow: visible;
 }
 
 .banner-svg-texto {
   font-family: 'Angelic War', 'Cormorant Garamond', cursive;
-  font-size: 155px;
+  font-size: 185px;
 }
 
 .banner-svg-borde {
   font-family: 'Angelic War', 'Cormorant Garamond', cursive;
-  font-size: 155px;
+  font-size: 185px;
   stroke: #1a1a1a;
   stroke-width: 4px;
   stroke-linejoin: round;
@@ -378,14 +378,14 @@ html {
 .destacados-track {
   display: flex;
   width: max-content;
-  animation: destacadosGirar 18s linear infinite;
+  cursor: grab;
+  touch-action: pan-y;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
-.destacados-track:hover { animation-play-state: paused; }
-
-@keyframes destacadosGirar {
-  from { transform: translateX(0); }
-  to { transform: translateX(-50%); }
+.destacados-track.arrastrando {
+  cursor: grabbing;
 }
 
 .destacado-card {
@@ -394,6 +394,7 @@ html {
   margin: 0 8px;
   text-decoration: none;
   cursor: pointer;
+  -webkit-user-drag: none;
 }
 
 .destacado-card-img {
@@ -854,7 +855,7 @@ html {
   .banner { height: 220px; }
   .banner-overlay { top: 12px; }
   .banner-svg { width: 100%; }
-  .banner-svg-texto, .banner-svg-borde { font-size: 108px; }
+  .banner-svg-texto, .banner-svg-borde { font-size: 132px; }
   .banner-social { left: 14px; gap: 8px; }
   .banner-social-link { padding: 5px 10px; font-size: 0.75rem; gap: 6px; }
   .banner-social-link svg { width: 16px; height: 16px; }
