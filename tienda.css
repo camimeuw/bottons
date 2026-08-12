@@ -86,34 +86,40 @@ html {
 
 .banner-social {
   position: absolute;
-  left: 16px;
+  left: 18px;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 7px;
   z-index: 2;
 }
 
 .banner-social-link {
   display: flex;
   align-items: center;
-  gap: 3px;
-  background: #e0b8cc;
-  border: 1px solid #1a1a1a;
-  color: #1a1a1a;
-  padding: 2px 7px;
-  border-radius: 14px;
+  gap: 6px;
+  background: #ff82b2;
+  border: none;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.25), 0 1px 2px rgba(0,0,0,0.15);
+  color: #d6197d;
+  padding: 5px 12px;
+  border-radius: 18px;
   font-family: 'Cormorant Garamond', serif;
-  font-size: 0.55rem;
-  letter-spacing: 0.3px;
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.4px;
   text-decoration: none;
   transition: all 0.2s ease;
 }
 
-.banner-social-link svg { flex-shrink: 0; width: 10px; height: 10px; }
+.banner-social-link svg { flex-shrink: 0; width: 15px; height: 15px; }
 
-.banner-social-link:hover { background: #1a1a1a; color: #f2ead9; }
+.banner-social-link:hover {
+  background: #ffa0cd;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3), 0 1px 3px rgba(0,0,0,0.2);
+  transform: translateY(-1px);
+}
 
 .banner-svg {
   width: 740px;
@@ -165,7 +171,7 @@ html {
 .menu-mobile-wrapper {
   display: none;
   flex-direction: column;
-  background: #ecd9e2;
+  background: #fc81b4;
   border-bottom: 2px solid #1a1a1a;
 }
 
@@ -174,7 +180,7 @@ html {
   letter-spacing: 2px;
   font-size: 1.1rem;
   color: #1a1a1a;
-  background: #e0b8cc;
+  background: #ffa0cd;
   border: none;
   border-bottom: 1px solid #1a1a1a;
   padding: 10px 16px;
@@ -200,10 +206,10 @@ html {
   text-decoration: none;
   padding: 8px 12px;
   border: 1px solid #1a1a1a;
-  background: #e0b8cc;
+  background: #ffa0cd;
 }
 
-.menu-mobile a:hover { background: #2a2220; color: #f2ead9; }
+.menu-mobile a:hover { background: #d6197d; color: #f2ead9; }
 
 /* ===== LAYOUT ===== */
 .tienda-grid {
@@ -216,7 +222,7 @@ html {
 }
 
 .sidebar {
-  background: #ecd9e2;
+  background: #fc81b4;
   border: 2px solid #1a1a1a;
   outline: 1px solid rgba(26,26,26,0.3);
   outline-offset: 2px;
@@ -256,14 +262,14 @@ html {
 }
 
 .sidebar-link:hover {
-  border-left: 3px solid #8a2a55;
-  background: #e0b8cc;
+  border-left: 3px solid #d6197d;
+  background: #ffa0cd;
   color: #1a1a1a;
   padding-left: 12px;
 }
 
 .sidebar-info {
-  background: #e0b8cc;
+  background: #ffa0cd;
   border: 1px solid #1a1a1a;
   padding: 8px;
   font-family: 'Cormorant Garamond', serif;
@@ -282,7 +288,7 @@ html {
 .anime-placeholder {
   width: 130px;
   height: 160px;
-  background: #e0b8cc;
+  background: #ffa0cd;
   border: 2px dashed #1a1a1a;
   display: flex;
   align-items: center;
@@ -298,7 +304,7 @@ html {
 }
 
 .contador {
-  background: #e0b8cc;
+  background: #ffa0cd;
   border: 1px solid #1a1a1a;
   padding: 6px;
   text-align: center;
@@ -308,7 +314,7 @@ html {
   font-family: 'Cormorant Garamond', serif;
   letter-spacing: 1px;
   font-size: 0.75rem;
-  color: #8a2a55;
+  color: #d6197d;
   margin: 0;
 }
 
@@ -334,14 +340,14 @@ html {
   letter-spacing: 1px;
   font-size: 0.85rem;
   color: #1a1a1a;
-  background: #e0b8cc;
+  background: #ffa0cd;
   border: 1px solid #1a1a1a;
   padding: 4px;
   text-decoration: none;
   transition: all 0.2s ease;
 }
 
-.red-btn:hover { background: #2a2220; color: #f2ead9; }
+.red-btn:hover { background: #d6197d; color: #f2ead9; }
 
 .contenido {
   display: flex;
@@ -415,7 +421,7 @@ html {
 .destacado-card-precio {
   font-family: 'Kiwi', cursive;
   font-size: 0.6rem;
-  color: #8a2a55;
+  color: #d6197d;
   margin: 2px 0 0;
 }
 
@@ -441,9 +447,9 @@ html {
   fill: #1a1a1a;
 }
 
-.svg-estrella1 { font-size: 22px; fill: #8a2a55; animation: flotar2 3s ease-in-out infinite; }
+.svg-estrella1 { font-size: 22px; fill: #d6197d; animation: flotar2 3s ease-in-out infinite; }
 .svg-estrella2 { font-size: 18px; fill: #1a1a1a; animation: flotar2 4s ease-in-out infinite 0.5s; }
-.svg-estrella3 { font-size: 18px; fill: #8a2a55; animation: flotar2 3.5s ease-in-out infinite 1s; }
+.svg-estrella3 { font-size: 18px; fill: #d6197d; animation: flotar2 3.5s ease-in-out infinite 1s; }
 .svg-burbuja1 { animation: flotar2 3s ease-in-out infinite; }
 .svg-burbuja2 { animation: flotar2 4s ease-in-out infinite 0.5s; }
 .svg-burbuja3 { animation: flotar2 3.5s ease-in-out infinite 1s; }
@@ -469,7 +475,7 @@ html {
   font-family: 'Grape Soda', 'Cormorant Garamond', cursive;
   font-size: 1.05rem;
   letter-spacing: 1px;
-  color: #8a2a55;
+  color: #d6197d;
   margin: 0 0 8px 0;
   padding-bottom: 4px;
   border-bottom: 1px dotted rgba(26,26,26,0.4);
@@ -494,7 +500,7 @@ html {
 }
 
 .producto-card {
-  background: #e0b8cc;
+  background: #ffa0cd;
   border: 1px solid #1a1a1a;
   padding: 8px;
   text-align: center;
@@ -505,7 +511,7 @@ html {
   transition: all 0.2s ease;
 }
 
-.producto-card:hover { border-color: #8a2a55; transform: translateY(-2px); }
+.producto-card:hover { border-color: #d6197d; transform: translateY(-2px); }
 
 .card-link {
   display: flex;
@@ -532,7 +538,7 @@ html {
 .card-precio {
   font-family: 'Kiwi', cursive;
   font-size: 0.8rem;
-  color: #8a2a55;
+  color: #d6197d;
   margin: 0;
 }
 
@@ -540,14 +546,14 @@ html {
   font-family: 'Kiwi', cursive;
   font-size: 0.75rem;
   color: #1a1a1a;
-  background: #ecd9e2;
+  background: #fc81b4;
   border: 1px solid #1a1a1a;
   padding: 4px 12px;
   cursor: pointer;
   transition: all 0.2s ease;
 }
 
-.card-btn:hover { background: #2a2220; color: #f2ead9; }
+.card-btn:hover { background: #d6197d; color: #f2ead9; }
 
 /* ===== CARRITO ===== */
 .carrito-icono {
@@ -582,7 +588,7 @@ html {
   height: 18px;
   padding: 0 4px;
   border-radius: 50%;
-  background: #8a2a55;
+  background: #d6197d;
   color: #f2ead9;
   font-family: monospace;
   font-size: 0.7rem;
@@ -609,9 +615,9 @@ html {
   right: -320px;
   width: 300px;
   height: 100vh;
-  background-color: #ecd9e2;
+  background-color: #fc81b4;
   background-image:
-    linear-gradient(rgba(236,217,226,0.9), rgba(236,217,226,0.9)),
+    linear-gradient(rgba(252,129,180,0.9), rgba(252,129,180,0.9)),
     url('assets/img/carrito-fondo.jpg');
   background-size: cover;
   background-position: center;
@@ -666,7 +672,7 @@ html {
 }
 
 .carrito-item {
-  background: #e0b8cc;
+  background: #ffa0cd;
   border: 1px solid #1a1a1a;
   padding: 10px;
   display: flex;
@@ -681,11 +687,11 @@ html {
   margin: 0;
 }
 
-.carrito-item-precio { font-size: 0.8rem; color: #8a2a55; margin: 0; }
+.carrito-item-precio { font-size: 0.8rem; color: #d6197d; margin: 0; }
 .carrito-item-controles { display: flex; align-items: center; gap: 8px; }
 
 .carrito-item-btn {
-  background: #ecd9e2;
+  background: #fc81b4;
   border: 1px solid #1a1a1a;
   color: #1a1a1a;
   width: 22px;
@@ -697,9 +703,9 @@ html {
   justify-content: center;
 }
 
-.carrito-item-btn:hover { background: #2a2220; color: #f2ead9; }
+.carrito-item-btn:hover { background: #d6197d; color: #f2ead9; }
 .carrito-item-cantidad { font-size: 0.85rem; color: #1a1a1a; min-width: 20px; text-align: center; }
-.carrito-item-eliminar { margin-left: auto; background: none; border: none; color: #8a2a55; font-size: 0.8rem; cursor: pointer; }
+.carrito-item-eliminar { margin-left: auto; background: none; border: none; color: #d6197d; font-size: 0.8rem; cursor: pointer; }
 .carrito-item-eliminar:hover { color: #1a1a1a; }
 
 .carrito-footer {
@@ -720,15 +726,15 @@ html {
   letter-spacing: 2px;
   text-transform: uppercase;
   font-size: 1rem;
-  color: #f2ead9;
-  background: #8a2a55;
+  color: #1a1a1a;
+  background: #f963af;
   border: none;
   padding: 10px;
   cursor: pointer;
   width: 100%;
 }
 
-.carrito-comprar:hover { background: #6e2044; }
+.carrito-comprar:hover { background: #ff82b2; }
 
 /* ===== PÁGINA DE PRODUCTO (producto.html) ===== */
 .producto-top {
@@ -742,7 +748,7 @@ html {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1rem;
   letter-spacing: 1px;
-  color: #8a2a55;
+  color: #d6197d;
   text-decoration: none;
   opacity: 0.85;
   transition: opacity 0.25s ease;
@@ -777,7 +783,7 @@ html {
 .producto-precio {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.3rem;
-  color: #8a2a55;
+  color: #d6197d;
   margin-bottom: 18px;
 }
 
@@ -794,8 +800,8 @@ html {
   font-size: 1.05rem;
   letter-spacing: 3px;
   text-transform: uppercase;
-  color: #f2ead9;
-  background: #8a2a55;
+  color: #1a1a1a;
+  background: #f963af;
   border: none;
   padding: 14px 30px;
   border-radius: 2px;
@@ -804,7 +810,7 @@ html {
 }
 
 .producto-agregar:hover {
-  background: #6e2044;
+  background: #ff82b2;
   letter-spacing: 4px;
 }
 
@@ -833,7 +839,7 @@ html {
   font-family: 'Cormorant Garamond', serif;
   font-size: 1.1rem;
   letter-spacing: 2px;
-  color: #8a2a55;
+  color: #d6197d;
   text-decoration: none;
   transition: color 0.25s ease, transform 0.2s ease;
 }
@@ -856,9 +862,9 @@ html {
   .banner-overlay { top: 12px; }
   .banner-svg { width: 100%; }
   .banner-svg-texto, .banner-svg-borde { font-size: 175px; }
-  .banner-social { left: 10px; gap: 3px; }
-  .banner-social-link { padding: 2px 6px; font-size: 0.5rem; gap: 3px; }
-  .banner-social-link svg { width: 9px; height: 9px; }
+  .banner-social { left: 12px; gap: 5px; }
+  .banner-social-link { padding: 4px 10px; font-size: 0.65rem; gap: 4px; }
+  .banner-social-link svg { width: 12px; height: 12px; }
   .productos-grid { grid-template-columns: repeat(2, 1fr); }
   .carrito-panel { width: 100%; right: -100%; }
   .menu-mobile-wrapper { display: flex; }
