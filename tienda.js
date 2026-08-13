@@ -10,6 +10,10 @@
     "Coleccionables y Otros": "coleccionables"
   };
 
+  function norm(t) {
+    return typeof normalizar === "function" ? normalizar(t) : String(t || "").toLowerCase().trim();
+  }
+
   function fondoProducto(p) {
     return p.imagen
       ? "background-image:url('" + p.imagen + "');background-size:cover;background-position:center;"
@@ -30,60 +34,42 @@
     return card;
   }
 
-  (Object.keys(SLUGS)).forEach((cat) => {
-    const contenedor = document.getElementById("grid-" + SLUGS[cat]);
-    if (!contenedor) return;
-    const subcategorias = (typeof SUBCATEGORIAS_TIENDA !== "undefined" && SUBCATEGORIAS_TIENDA[cat]) || [];
+  function renderGrids() {
+    (Object.keys(SLUGS)).forEach((cat) => {
+      const contenedor = document.getElementById("grid-" + SLUGS[cat]);
+      if (!contenedor) return;
+      contenedor.innerHTML = "";
+      const subcategorias = (typeof SUBCATEGORIAS_TIENDA !== "undefined" && SUBCATEGORIAS_TIENDA[cat]) || [];
 
-    subcategorias.forEach((sub) => {
-      const bloque = document.createElement("div");
-      bloque.className = "subcategoria-bloque";
+      subcategorias.forEach((sub) => {
+        const bloque = document.createElement("div");
+        bloque.className = "subcategoria-bloque";
 
-      const titulo = document.createElement("h3");
-      titulo.className = "subcategoria-titulo";
-      titulo.textContent = sub;
-      bloque.appendChild(titulo);
+        const titulo = document.createElement("h3");
+        titulo.className = "subcategoria-titulo";
+        titulo.textContent = sub;
+        bloque.appendChild(titulo);
 
-      const grid = document.createElement("div");
-      grid.className = "productos-grid";
+        const grid = document.createElement("div");
+        grid.className = "productos-grid";
 
-      const productos = PRODUCTOS.filter((p) => p.categoria === cat && p.subcategoria === sub);
-      if (productos.length) {
-        productos.forEach((p) => grid.appendChild(crearProductoCard(p)));
-      } else {
-        grid.innerHTML = '<p class="productos-empty">próximamente ✦</p>';
-      }
-      bloque.appendChild(grid);
-      contenedor.appendChild(bloque);
-    });
-  });
-
-  document.addEventListener("click", (e) => {
-    const btn = e.target.closest(".card-btn");
-    if (!btn) return;
-    e.preventDefault();
-    const producto = PRODUCTOS.find((p) => p.id === Number(btn.dataset.id));
-    if (producto && window.Carrito) window.Carrito.agregar(producto);
-  });
-
-  const buscador = document.getElementById("buscador");
-  if (buscador) {
-    buscador.addEventListener("input", () => {
-      const q = buscador.value.trim().toLowerCase();
-      document.querySelectorAll(".producto-card").forEach((card) => {
-        card.style.display = !q || card.dataset.nombre.includes(q) ? "" : "none";
+        const productos = PRODUCTOS.filter((p) => norm(p.categoria) === norm(cat) && norm(p.subcategoria) === norm(sub));
+        if (productos.length) {
+          productos.forEach((p) => grid.appendChild(crearProductoCard(p)));
+        } else {
+          grid.innerHTML = '<p class="productos-empty">próximamente ✦</p>';
+        }
+        bloque.appendChild(grid);
+        contenedor.appendChild(bloque);
       });
     });
   }
 
-  const menuBtn = document.getElementById("menu-hamburguesa");
-  const menu = document.getElementById("menu-mobile");
-  if (menuBtn && menu) {
-    menuBtn.addEventListener("click", () => menu.classList.toggle("abierto"));
-  }
+  function renderDestacados() {
+    const destacadosTrack = document.getElementById("destacados-track");
+    if (!destacadosTrack || destacadosTrack.dataset.iniciado) return;
+    destacadosTrack.dataset.iniciado = "1";
 
-  const destacadosTrack = document.getElementById("destacados-track");
-  if (destacadosTrack) {
     function crearDestacado(p) {
       const a = document.createElement("a");
       a.className = "destacado-card";
@@ -155,6 +141,40 @@
         seMovio = false;
       }
     }, true);
+  }
+
+  function iniciar() {
+    renderGrids();
+    renderDestacados();
+  }
+
+  if (PRODUCTOS.length) {
+    iniciar();
+  }
+  window.addEventListener("productosLoaded", iniciar);
+
+  document.addEventListener("click", (e) => {
+    const btn = e.target.closest(".card-btn");
+    if (!btn) return;
+    e.preventDefault();
+    const producto = PRODUCTOS.find((p) => p.id === Number(btn.dataset.id));
+    if (producto && window.Carrito) window.Carrito.agregar(producto);
+  });
+
+  const buscador = document.getElementById("buscador");
+  if (buscador) {
+    buscador.addEventListener("input", () => {
+      const q = buscador.value.trim().toLowerCase();
+      document.querySelectorAll(".producto-card").forEach((card) => {
+        card.style.display = !q || card.dataset.nombre.includes(q) ? "" : "none";
+      });
+    });
+  }
+
+  const menuBtn = document.getElementById("menu-hamburguesa");
+  const menu = document.getElementById("menu-mobile");
+  if (menuBtn && menu) {
+    menuBtn.addEventListener("click", () => menu.classList.toggle("abierto"));
   }
 
   const contadorEl = document.getElementById("contador");
