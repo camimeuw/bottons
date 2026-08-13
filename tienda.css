@@ -688,7 +688,7 @@ html {
 }
 
 .carrito-item {
-  background: #ffd6ea;
+  background: rgba(110, 110, 110, 0.6);
   border: 1px solid #1a1a1a;
   padding: 10px;
   display: flex;
