@@ -14,10 +14,45 @@
     return typeof normalizar === "function" ? normalizar(t) : String(t || "").toLowerCase().trim();
   }
 
-  function fondoProducto(p) {
-    return p.imagen
-      ? "background-image:url('" + p.imagen + "');background-size:cover;background-position:center;"
-      : "background:" + p.color + ";";
+  // Las tarjetas son chicas: pedirle a Drive una miniatura liviana (en vez de la de 1000px)
+  // hace que las fotos aparezcan mucho más rápido en la grilla.
+  function urlMiniatura(url) {
+    if (!url) return '';
+    return url.indexOf('drive.google.com/thumbnail') !== -1 ? url.replace(/sz=w\d+/, 'sz=w400') : url;
+  }
+
+  function fondoColor(p) {
+    return "background:" + p.color + ";";
+  }
+
+  // Observer compartido: recién carga la foto de la tarjeta cuando está por entrar en pantalla,
+  // en vez de disparar todas las descargas de golpe al renderizar la grilla completa.
+  const lazyObserver = "IntersectionObserver" in window
+    ? new IntersectionObserver((entradas) => {
+        entradas.forEach((entrada) => {
+          if (!entrada.isIntersecting) return;
+          const el = entrada.target;
+          const url = el.dataset.bg;
+          if (url) {
+            el.style.backgroundImage = "url('" + url + "')";
+            el.style.backgroundSize = "cover";
+            el.style.backgroundPosition = "center";
+          }
+          lazyObserver.unobserve(el);
+        });
+      }, { rootMargin: "200px" })
+    : null;
+
+  function observarLazy(el, url) {
+    if (!url) return;
+    if (!lazyObserver) {
+      el.style.backgroundImage = "url('" + url + "')";
+      el.style.backgroundSize = "cover";
+      el.style.backgroundPosition = "center";
+      return;
+    }
+    el.dataset.bg = url;
+    lazyObserver.observe(el);
   }
 
   function crearProductoCard(p) {
@@ -27,12 +62,13 @@
     const stockStatus = p.stock !== undefined && p.stock === 0 ? ' agotado' : '';
     card.innerHTML =
       '<a href="producto.html?id=' + p.id + '" class="card-link">' +
-      '<div class="card-imagen" style="' + fondoProducto(p) + '"></div>' +
+      '<div class="card-imagen" style="' + fondoColor(p) + '"></div>' +
       '<p class="card-nombre">' + p.nombre + '</p>' +
       '<p class="card-precio">' + p.precio + '</p>' +
       (p.stock !== undefined ? '<p class="card-stock">' + (p.stock === 0 ? 'agotado' : 'disponible: ' + p.stock) + '</p>' : '') +
       '</a>' +
       '<button class="card-btn' + stockStatus + '" type="button" data-id="' + p.id + '"' + (p.stock === 0 ? ' disabled' : '') + '>agregar ✦</button>';
+    observarLazy(card.querySelector(".card-imagen"), urlMiniatura(p.imagen));
     return card;
   }
 
@@ -77,9 +113,10 @@
       a.className = "destacado-card";
       a.href = "producto.html?id=" + p.id;
       a.innerHTML =
-        '<div class="destacado-card-img" style="' + fondoProducto(p) + '"></div>' +
+        '<div class="destacado-card-img" style="' + fondoColor(p) + '"></div>' +
         '<p class="destacado-card-nombre">' + p.nombre + '</p>' +
         '<p class="destacado-card-precio">' + p.precio + '</p>';
+      observarLazy(a.querySelector(".destacado-card-img"), urlMiniatura(p.imagen));
       return a;
     }
 
