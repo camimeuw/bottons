@@ -10,13 +10,19 @@
     "Coleccionables y Otros": "coleccionables"
   };
 
+  function fondoProducto(p) {
+    return p.imagen
+      ? "background-image:url('" + p.imagen + "');background-size:cover;background-position:center;"
+      : "background:" + p.color + ";";
+  }
+
   function crearProductoCard(p) {
     const card = document.createElement("div");
     card.className = "producto-card";
     card.dataset.nombre = p.nombre.toLowerCase();
     card.innerHTML =
       '<a href="producto.html?id=' + p.id + '" class="card-link">' +
-      '<div class="card-imagen" style="background:' + p.color + '"></div>' +
+      '<div class="card-imagen" style="' + fondoProducto(p) + '"></div>' +
       '<p class="card-nombre">' + p.nombre + '</p>' +
       '<p class="card-precio">' + p.precio + '</p>' +
       '</a>' +
@@ -83,7 +89,7 @@
       a.className = "destacado-card";
       a.href = "producto.html?id=" + p.id;
       a.innerHTML =
-        '<div class="destacado-card-img" style="background:' + p.color + '"></div>' +
+        '<div class="destacado-card-img" style="' + fondoProducto(p) + '"></div>' +
         '<p class="destacado-card-nombre">' + p.nombre + '</p>' +
         '<p class="destacado-card-precio">' + p.precio + '</p>';
       return a;

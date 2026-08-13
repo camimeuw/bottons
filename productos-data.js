@@ -1,5 +1,50 @@
 let PRODUCTOS = [];
 
+// Parsea CSV respetando campos entre comillas que pueden contener comas
+function parsearCSV(texto) {
+  const filas = [];
+  let fila = [];
+  let campo = '';
+  let entreComillas = false;
+
+  for (let i = 0; i < texto.length; i++) {
+    const c = texto[i];
+    const siguiente = texto[i + 1];
+
+    if (entreComillas) {
+      if (c === '"' && siguiente === '"') {
+        campo += '"';
+        i++;
+      } else if (c === '"') {
+        entreComillas = false;
+      } else {
+        campo += c;
+      }
+    } else {
+      if (c === '"') {
+        entreComillas = true;
+      } else if (c === ',') {
+        fila.push(campo.trim());
+        campo = '';
+      } else if (c === '\n') {
+        fila.push(campo.trim());
+        filas.push(fila);
+        fila = [];
+        campo = '';
+      } else if (c === '\r') {
+        // ignorar
+      } else {
+        campo += c;
+      }
+    }
+  }
+  if (campo.length > 0 || fila.length > 0) {
+    fila.push(campo.trim());
+    filas.push(fila);
+  }
+  return filas;
+}
+
 // Cargar productos desde Google Sheets
 (function() {
   const SHEETS_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQqRiySa4HmpusvqyxqkTKpIAGR-FXnlDRbDOQyEyRq9Dh-0xhn1IOnp3v6bbc4KW-G9LRwfnaC-_fA/pub?output=csv";
@@ -7,24 +52,25 @@ let PRODUCTOS = [];
   fetch(SHEETS_URL)
     .then(response => response.text())
     .then(csv => {
-      const lineas = csv.trim().split('\n');
-      if (lineas.length < 2) return;
+      const filas = parsearCSV(csv.trim());
+      if (filas.length < 2) return;
 
       // Parsear encabezados
-      const encabezados = lineas[0].split(',').map(h => h.trim().toLowerCase());
+      const encabezados = filas[0].map(h => h.toLowerCase());
       const indicePorNombre = {};
       encabezados.forEach((enc, idx) => {
         indicePorNombre[enc] = idx;
       });
 
       // Parsear filas
-      for (let i = 1; i < lineas.length; i++) {
-        const fila = lineas[i].split(',').map(v => v.trim());
+      for (let i = 1; i < filas.length; i++) {
+        const fila = filas[i];
 
         const id = Number(fila[indicePorNombre['id']] || i);
         const nombre = fila[indicePorNombre['nombre']] || '';
         const precio = fila[indicePorNombre['precio']] || '$0';
         const color = fila[indicePorNombre['color']] || '#ffd6ea';
+        const imagen = fila[indicePorNombre['imagen']] || '';
         const detalle = fila[indicePorNombre['detalle']] || '';
         const categoria = fila[indicePorNombre['categoria']] || '';
         const subcategoria = fila[indicePorNombre['subcategoria']] || '';
@@ -36,6 +82,7 @@ let PRODUCTOS = [];
             nombre,
             precio,
             color,
+            imagen,
             detalle,
             categoria,
             subcategoria,
