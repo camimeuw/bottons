@@ -161,7 +161,7 @@ html {
 .menu-mobile-wrapper {
   display: none;
   flex-direction: column;
-  background: #ff8fc0;
+  background: #fff0f6;
   border-bottom: 2px solid #1a1a1a;
 }
 
@@ -170,7 +170,7 @@ html {
   letter-spacing: 2px;
   font-size: 1.1rem;
   color: #1a1a1a;
-  background: #ff8fc0;
+  background: #ffd6ea;
   border: none;
   border-bottom: 1px solid #1a1a1a;
   padding: 10px 16px;
@@ -196,7 +196,7 @@ html {
   text-decoration: none;
   padding: 8px 12px;
   border: 1px solid #1a1a1a;
-  background: #ff8fc0;
+  background: #ffd6ea;
 }
 
 .menu-mobile a:hover { background: #d6197d; color: #f2ead9; }
@@ -688,7 +688,7 @@ html {
 }
 
 .carrito-item {
-  background: rgba(110, 110, 110, 0.6);
+  background: #ffd6ea;
   border: 1px solid #1a1a1a;
   padding: 10px;
   display: flex;
