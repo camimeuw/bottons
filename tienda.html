@@ -195,21 +195,26 @@
 
 <script>
 (function() {
-  // Pausar música anterior de index.html
-  const musicaAnterior = document.getElementById('bg-music');
-  if (musicaAnterior) {
-    musicaAnterior.pause();
-    musicaAnterior.currentTime = 0;
-  }
+  // Pausar TODA música anterior inmediatamente
+  const audiosAnteriores = document.querySelectorAll('audio');
+  audiosAnteriores.forEach(audio => {
+    if (audio.id !== 'musica-inicio') {
+      audio.pause();
+      audio.currentTime = 0;
+    }
+  });
 
   const musicaInicio = document.getElementById('musica-inicio');
   if (!musicaInicio) return;
 
-  // Reproducir música solo en la primera carga de tienda
-  if (!window.tiendaMusicaReproducida) {
-    musicaInicio.play().catch(() => {});
-    window.tiendaMusicaReproducida = true;
-  }
+  // Esperar a que el audio esté listo y reproducir
+  setTimeout(() => {
+    if (!window.tiendaMusicaReproducida) {
+      musicaInicio.volume = 0.5;
+      musicaInicio.play().catch(() => {});
+      window.tiendaMusicaReproducida = true;
+    }
+  }, 100);
 
   // Pausar cuando se navega a otra página
   document.addEventListener('click', (e) => {

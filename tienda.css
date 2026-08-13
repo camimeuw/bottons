@@ -70,7 +70,7 @@ html {
 
 @keyframes flotar {
   0% { transform: translateX(-50%) translateY(0); }
-  50% { transform: translateX(-50%) translateY(-10px); }
+  50% { transform: translateX(-50%) translateY(-3px); }
   100% { transform: translateX(-50%) translateY(0); }
 }
 
@@ -602,8 +602,8 @@ html {
 .carrito-panel {
   position: fixed;
   top: 0;
-  right: -260px;
-  width: 240px;
+  right: -220px;
+  width: 200px;
   height: 100vh;
   background-color: #fff0f6;
   background-image: url('assets/img/carrito-fondo.jpg');
