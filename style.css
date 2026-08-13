@@ -13,6 +13,7 @@
 
 html {
   background: var(--page-bg, #0a0a0a);
+  scroll-behavior: smooth;
 }
 
 body {
@@ -264,5 +265,54 @@ body.page-leaving {
 
 .sound-toggle.is-playing .sound-mute {
   opacity: 0;
+}
+
+.contacto-section {
+  min-height: 100vh;
+  background: #0a0a0a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 34px;
+  padding: 40px 20px;
+}
+
+.contacto-titulo {
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 400;
+  font-size: 2rem;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: #eee;
+  text-shadow: 0 0 8px rgba(0,0,0,0.9);
+}
+
+.contacto-links {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: center;
+}
+
+.contacto-link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
+  color: #eee;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.35);
+  border-radius: 30px;
+  padding: 12px 28px;
+  transition: all 0.25s ease;
+}
+
+.contacto-link:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: rgba(255,255,255,0.6);
+  color: #fff;
 }
 

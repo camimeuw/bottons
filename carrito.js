@@ -129,4 +129,9 @@
 
   window.addEventListener("pageshow", renderCarrito);
   renderCarrito();
+
+  // Si venimos del botón "Continuar" del inicio, abrir el carrito directamente
+  if (new URLSearchParams(window.location.search).get("carrito") === "1" && leerCarrito().length) {
+    abrirCarrito();
+  }
 })();
