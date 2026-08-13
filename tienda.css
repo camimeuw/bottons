@@ -606,11 +606,10 @@ html {
   width: 300px;
   height: 100vh;
   background-color: #fff0f6;
-  background-image:
-    linear-gradient(rgba(255,240,246,0.9), rgba(255,240,246,0.9)),
-    url('assets/img/carrito-fondo.jpg');
+  background-image: url('assets/img/carrito-fondo.jpg');
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
   border-left: 2px solid #1a1a1a;
   z-index: 1000;
   display: flex;

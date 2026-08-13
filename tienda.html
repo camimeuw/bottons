@@ -111,7 +111,7 @@
 
     <!-- BIENVENIDA -->
     <div class="seccion inicio-seccion">
-      <audio autoplay loop style="display:none;">
+      <audio id="musica-inicio" loop style="display:none;">
         <source src="assets/audio/inicio.mp3" type="audio/mpeg">
       </audio>
       <div class="inicio-frase">
@@ -192,6 +192,41 @@
 <script src="carrito.js"></script>
 <script src="tienda.js"></script>
 <script src="transitions.js"></script>
+
+<script>
+(function() {
+  const musicaInicio = document.getElementById('musica-inicio');
+  if (!musicaInicio) return;
+
+  // Reproducir música solo en la primera carga
+  let musicaReproducida = sessionStorage.getItem('musica-reproducida');
+  if (!musicaReproducida) {
+    musicaInicio.play().catch(() => {});
+    sessionStorage.setItem('musica-reproducida', 'true');
+  }
+
+  // Pausar cuando se navega a otra página
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest('a[href]');
+    if (link && !link.href.includes('#') && link.href !== location.href) {
+      musicaInicio.pause();
+    }
+  });
+
+  // Pausar al hacer scroll fuera de la sección de inicio
+  const inicioSeccion = document.querySelector('.inicio-seccion');
+  if (inicioSeccion) {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          musicaInicio.pause();
+        }
+      });
+    });
+    observer.observe(inicioSeccion);
+  }
+})();
+</script>
 
 </body>
 </html>
