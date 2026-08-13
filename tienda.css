@@ -120,12 +120,12 @@ html {
 
 .banner-svg-texto {
   font-family: 'Angelic War', 'Cormorant Garamond', cursive;
-  font-size: 210px;
+  font-size: 120px;
 }
 
 .banner-svg-borde {
   font-family: 'Angelic War', 'Cormorant Garamond', cursive;
-  font-size: 210px;
+  font-size: 120px;
   stroke: #1a1a1a;
   stroke-width: 4px;
   stroke-linejoin: round;
@@ -221,6 +221,14 @@ html {
   gap: 8px;
   padding: 8px;
   box-shadow: 2px 0px 8px rgba(0,0,0,0.2);
+}
+
+.buscador-box {
+  display: none;
+}
+
+.contador {
+  display: none;
 }
 
 .sidebar-titulo {
