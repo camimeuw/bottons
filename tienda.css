@@ -447,9 +447,9 @@ html {
   fill: #1a1a1a;
 }
 
-.svg-estrella1 { font-size: 22px; fill: #d6197d; animation: flotar2 3s ease-in-out infinite; }
-.svg-estrella2 { font-size: 18px; fill: #1a1a1a; animation: flotar2 4s ease-in-out infinite 0.5s; }
-.svg-estrella3 { font-size: 18px; fill: #d6197d; animation: flotar2 3.5s ease-in-out infinite 1s; }
+.svg-estrella1 { font-size: 22px; fill: #ff8fc0; animation: flotar2 3s ease-in-out infinite; }
+.svg-estrella2 { font-size: 18px; fill: #ffb3d1; animation: flotar2 4s ease-in-out infinite 0.5s; }
+.svg-estrella3 { font-size: 18px; fill: #ffd6ea; animation: flotar2 3.5s ease-in-out infinite 1s; }
 .svg-burbuja1 { animation: flotar2 3s ease-in-out infinite; }
 .svg-burbuja2 { animation: flotar2 4s ease-in-out infinite 0.5s; }
 .svg-burbuja3 { animation: flotar2 3.5s ease-in-out infinite 1s; }
