@@ -161,7 +161,7 @@ html {
 .menu-mobile-wrapper {
   display: none;
   flex-direction: column;
-  background: #fff0f6;
+  background: #ff8fc0;
   border-bottom: 2px solid #1a1a1a;
 }
 
@@ -170,7 +170,7 @@ html {
   letter-spacing: 2px;
   font-size: 1.1rem;
   color: #1a1a1a;
-  background: #ffd6ea;
+  background: #ff8fc0;
   border: none;
   border-bottom: 1px solid #1a1a1a;
   padding: 10px 16px;
@@ -196,7 +196,7 @@ html {
   text-decoration: none;
   padding: 8px 12px;
   border: 1px solid #1a1a1a;
-  background: #ffd6ea;
+  background: #ff8fc0;
 }
 
 .menu-mobile a:hover { background: #d6197d; color: #f2ead9; }
