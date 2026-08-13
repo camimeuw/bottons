@@ -45,6 +45,47 @@ function parsearCSV(texto) {
   return filas;
 }
 
+// Quita tildes/acentos y pasa a minúsculas para poder comparar encabezados
+function normalizar(texto) {
+  return String(texto || '')
+    .toLowerCase()
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .trim();
+}
+
+// Convierte links de Google Drive (compartir) a un link de imagen directo
+function convertirLinkImagen(url) {
+  url = url.trim();
+  if (!url) return '';
+  const match = url.match(/drive\.google\.com\/(?:file\/d\/|open\?id=|uc\?id=)([a-zA-Z0-9_-]+)/);
+  if (match) {
+    return 'https://drive.google.com/thumbnail?id=' + match[1] + '&sz=w1000';
+  }
+  return url;
+}
+
+// Alias posibles para cada columna, por si la planilla usa otro nombre
+const ALIAS_COLUMNAS = {
+  id: ['id'],
+  nombre: ['nombre', 'producto', 'titulo', 'title', 'name'],
+  precio: ['precio', 'price'],
+  color: ['color'],
+  imagen: ['imagen', 'imagenes', 'foto', 'fotos', 'image', 'images', 'photo', 'photos'],
+  detalle: ['detalle', 'descripcion', 'description', 'detalles'],
+  categoria: ['categoria', 'category'],
+  subcategoria: ['subcategoria', 'sub categoria', 'subcategory'],
+  talles: ['talles', 'talle', 'size', 'sizes', 'tamanos', 'tamanio']
+};
+
+function buscarIndice(indicePorNombre, campo) {
+  const alias = ALIAS_COLUMNAS[campo] || [campo];
+  for (const nombre of alias) {
+    if (indicePorNombre[nombre] !== undefined) return indicePorNombre[nombre];
+  }
+  return undefined;
+}
+
 // Cargar productos desde Google Sheets
 (function() {
   const SHEETS_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQqRiySa4HmpusvqyxqkTKpIAGR-FXnlDRbDOQyEyRq9Dh-0xhn1IOnp3v6bbc4KW-G9LRwfnaC-_fA/pub?output=csv";
@@ -55,28 +96,38 @@ function parsearCSV(texto) {
       const filas = parsearCSV(csv.trim());
       if (filas.length < 2) return;
 
-      // Parsear encabezados
-      const encabezados = filas[0].map(h => h.toLowerCase());
+      // Parsear encabezados (ignorando tildes, mayúsculas y espacios)
+      const encabezados = filas[0].map(h => normalizar(h));
       const indicePorNombre = {};
       encabezados.forEach((enc, idx) => {
         indicePorNombre[enc] = idx;
       });
 
+      const iId = buscarIndice(indicePorNombre, 'id');
+      const iNombre = buscarIndice(indicePorNombre, 'nombre');
+      const iPrecio = buscarIndice(indicePorNombre, 'precio');
+      const iColor = buscarIndice(indicePorNombre, 'color');
+      const iImagen = buscarIndice(indicePorNombre, 'imagen');
+      const iDetalle = buscarIndice(indicePorNombre, 'detalle');
+      const iCategoria = buscarIndice(indicePorNombre, 'categoria');
+      const iSubcategoria = buscarIndice(indicePorNombre, 'subcategoria');
+      const iTalles = buscarIndice(indicePorNombre, 'talles');
+
       // Parsear filas
       for (let i = 1; i < filas.length; i++) {
         const fila = filas[i];
 
-        const id = Number(fila[indicePorNombre['id']] || i);
-        const nombre = fila[indicePorNombre['nombre']] || '';
-        const precio = fila[indicePorNombre['precio']] || '$0';
-        const color = fila[indicePorNombre['color']] || '#ffd6ea';
-        const imagenesRaw = fila[indicePorNombre['imagen']] || '';
-        const imagenes = imagenesRaw.split(',').map(u => u.trim()).filter(u => u);
+        const id = Number(fila[iId] || i);
+        const nombre = fila[iNombre] || '';
+        const precio = fila[iPrecio] || '$0';
+        const color = fila[iColor] || '#ffd6ea';
+        const imagenesRaw = fila[iImagen] || '';
+        const imagenes = imagenesRaw.split(',').map(u => convertirLinkImagen(u)).filter(u => u);
         const imagen = imagenes[0] || '';
-        const detalle = fila[indicePorNombre['detalle']] || '';
-        const categoria = fila[indicePorNombre['categoria']] || '';
-        const subcategoria = fila[indicePorNombre['subcategoria']] || '';
-        const talles = fila[indicePorNombre['talles']] || '';
+        const detalle = fila[iDetalle] || '';
+        const categoria = fila[iCategoria] || '';
+        const subcategoria = fila[iSubcategoria] || '';
+        const talles = fila[iTalles] || '';
 
         if (nombre) {
           PRODUCTOS.push({
