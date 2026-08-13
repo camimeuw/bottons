@@ -85,8 +85,15 @@ const ALIAS_COLUMNAS = {
   categoria: ['categoria', 'category'],
   subcategoria: ['subcategoria', 'sub categoria', 'subcategory'],
   talles: ['talles', 'talle', 'size', 'sizes', 'tamanos', 'tamanio'],
-  stock: ['stock', 'inventario', 'cantidad', 'disponible', 'cantidad disponible']
+  stock: ['stock', 'inventario', 'cantidad', 'disponible', 'cantidad disponible'],
+  destacado: ['destacado', 'destacados', 'featured']
 };
+
+// Interpreta valores tipo si/no, true/false, x, 1 como booleano
+function esVerdadero(valor) {
+  const texto = normalizar(valor);
+  return ['si', 'sí', 'yes', 'true', '1', 'x'].includes(texto);
+}
 
 function buscarIndice(indicePorNombre, campo) {
   const alias = ALIAS_COLUMNAS[campo] || [campo];
@@ -123,6 +130,7 @@ function buscarIndice(indicePorNombre, campo) {
       const iSubcategoria = buscarIndice(indicePorNombre, 'subcategoria');
       const iTalles = buscarIndice(indicePorNombre, 'talles');
       const iStock = buscarIndice(indicePorNombre, 'stock');
+      const iDestacado = buscarIndice(indicePorNombre, 'destacado');
 
       // Parsear filas
       for (let i = 1; i < filas.length; i++) {
@@ -140,6 +148,7 @@ function buscarIndice(indicePorNombre, campo) {
         const subcategoria = fila[iSubcategoria] || '';
         const talles = fila[iTalles] || '';
         const stock = iStock !== undefined ? Number(fila[iStock] || 0) : undefined;
+        const destacado = iDestacado !== undefined ? esVerdadero(fila[iDestacado]) : false;
 
         if (nombre) {
           PRODUCTOS.push({
@@ -153,6 +162,7 @@ function buscarIndice(indicePorNombre, campo) {
             categoria,
             subcategoria,
             talles,
+            destacado,
             ...(stock !== undefined && { stock })
           });
         }
@@ -164,12 +174,12 @@ function buscarIndice(indicePorNombre, campo) {
     .catch(() => {
       // Si falla, usar productos de fallback
       PRODUCTOS = [
-        { id: 1, nombre: "Top Y2K Estrella", precio: "Gs. 8.000", color: "#ffd6ea", detalle: "Talles: S, M, L. Tela stretch, corte cropped.", categoria: "Alt & Y2K", subcategoria: "Tops/mangas largas/remeras", talles: "S, M, L", stock: 5 },
-        { id: 2, nombre: "Campera Vintage", precio: "Gs. 15.000", color: "#d6197d", detalle: "Talle único. Pieza de archivo, buen estado.", categoria: "Vintage & 2nd Hand", subcategoria: "Camperas", talles: "Única", stock: 1 },
-        { id: 3, nombre: "Minifalda Soft", precio: "Gs. 10.000", color: "#ff8fc0", detalle: "Talles: S, M. Tiro alto, lazo lateral.", categoria: "Soft & Polka Dots", subcategoria: "Minifaldas", talles: "S, M", stock: 3 },
-        { id: 4, nombre: "Bolso Grunge", precio: "Gs. 12.000", color: "#fff0f6", detalle: "Cuerina negra, correa ajustable.", categoria: "Midwest & Grunge", subcategoria: "Bolsos", talles: "", stock: 2 },
-        { id: 5, nombre: "Peluche Minecraft", precio: "Gs. 6.000", color: "#ffb3d1", detalle: "20cm, bordado, edición limitada.", categoria: "Coleccionables y Otros", subcategoria: "Peluches", talles: "", stock: 0 },
-        { id: 6, nombre: "Carcasa Horror Game", precio: "Gs. 5.000", color: "#ffd6ea", detalle: "Compatible iPhone y Android.", categoria: "Coleccionables y Otros", subcategoria: "Carcasas", talles: "", stock: 8 }
+        { id: 1, nombre: "Top Y2K Estrella", precio: "Gs. 8.000", color: "#ffd6ea", detalle: "Talles: S, M, L. Tela stretch, corte cropped.", categoria: "Alt & Y2K", subcategoria: "Tops/mangas largas/remeras", talles: "S, M, L", stock: 5, destacado: true },
+        { id: 2, nombre: "Campera Vintage", precio: "Gs. 15.000", color: "#d6197d", detalle: "Talle único. Pieza de archivo, buen estado.", categoria: "Vintage & 2nd Hand", subcategoria: "Camperas", talles: "Única", stock: 1, destacado: true },
+        { id: 3, nombre: "Minifalda Soft", precio: "Gs. 10.000", color: "#ff8fc0", detalle: "Talles: S, M. Tiro alto, lazo lateral.", categoria: "Soft & Polka Dots", subcategoria: "Minifaldas", talles: "S, M", stock: 3, destacado: false },
+        { id: 4, nombre: "Bolso Grunge", precio: "Gs. 12.000", color: "#fff0f6", detalle: "Cuerina negra, correa ajustable.", categoria: "Midwest & Grunge", subcategoria: "Bolsos", talles: "", stock: 2, destacado: false },
+        { id: 5, nombre: "Peluche Minecraft", precio: "Gs. 6.000", color: "#ffb3d1", detalle: "20cm, bordado, edición limitada.", categoria: "Coleccionables y Otros", subcategoria: "Peluches", talles: "", stock: 0, destacado: true },
+        { id: 6, nombre: "Carcasa Horror Game", precio: "Gs. 5.000", color: "#ffd6ea", detalle: "Compatible iPhone y Android.", categoria: "Coleccionables y Otros", subcategoria: "Carcasas", talles: "", stock: 8, destacado: false }
       ];
       window.dispatchEvent(new Event('productosLoaded'));
     });

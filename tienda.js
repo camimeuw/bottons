@@ -82,7 +82,18 @@
         '<p class="destacado-card-precio">' + p.precio + '</p>';
       return a;
     }
-    PRODUCTOS.concat(PRODUCTOS).forEach((p) => destacadosTrack.appendChild(crearDestacado(p)));
+
+    // Usa solo los productos marcados como destacados; si ninguno está marcado, muestra el catálogo entero
+    const seleccion = PRODUCTOS.filter((p) => p.destacado);
+    const lista = seleccion.length ? seleccion : PRODUCTOS;
+
+    // Repite la lista hasta tener un mínimo de items, para que el loop no se sienta tan repetitivo con pocos destacados
+    const MIN_BASE = 6;
+    let base = [];
+    while (lista.length && base.length < MIN_BASE) base = base.concat(lista);
+
+    // Se duplica la base exacta (no más) para que el scroll infinito quede parejo en la mitad
+    base.concat(base).forEach((p) => destacadosTrack.appendChild(crearDestacado(p)));
 
     // Auto-scroll continuo que se puede pausar y arrastrar con el mouse/dedo.
     let offset = 0;
