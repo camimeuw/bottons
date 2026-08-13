@@ -103,11 +103,11 @@ html {
   font-size: 12px;
   color: #ffb3d1;
   background: #fff0f6;
-  border: 2px solid #ffcfe4;
+  border: 2px solid #ffd6ea;
   border-radius: 20px;
   padding: 7px 14px;
   cursor: pointer;
-  box-shadow: 0 3px 0 #ffcfe4;
+  box-shadow: 0 3px 0 #ffd6ea;
   text-decoration: none;
   transition: all 0.2s ease;
 }
@@ -118,7 +118,7 @@ html {
   background: #ff8fc0;
   color: #fff;
   border-color: #ff8fc0;
-  box-shadow: 0 3px 0 #ffb6d9;
+  box-shadow: 0 3px 0 #ffb3d1;
 }
 
 .banner-svg {
@@ -171,7 +171,7 @@ html {
 .menu-mobile-wrapper {
   display: none;
   flex-direction: column;
-  background: #fc81b4;
+  background: #fff0f6;
   border-bottom: 2px solid #1a1a1a;
 }
 
@@ -180,7 +180,7 @@ html {
   letter-spacing: 2px;
   font-size: 1.1rem;
   color: #1a1a1a;
-  background: #ffa0cd;
+  background: #ffd6ea;
   border: none;
   border-bottom: 1px solid #1a1a1a;
   padding: 10px 16px;
@@ -206,7 +206,7 @@ html {
   text-decoration: none;
   padding: 8px 12px;
   border: 1px solid #1a1a1a;
-  background: #ffa0cd;
+  background: #ffd6ea;
 }
 
 .menu-mobile a:hover { background: #d6197d; color: #f2ead9; }
@@ -222,7 +222,7 @@ html {
 }
 
 .sidebar {
-  background: #fc81b4;
+  background: #fff0f6;
   border: 2px solid #1a1a1a;
   outline: 1px solid rgba(26,26,26,0.3);
   outline-offset: 2px;
@@ -263,13 +263,13 @@ html {
 
 .sidebar-link:hover {
   border-left: 3px solid #d6197d;
-  background: #ffa0cd;
+  background: #ffd6ea;
   color: #1a1a1a;
   padding-left: 12px;
 }
 
 .sidebar-info {
-  background: #ffa0cd;
+  background: #ffd6ea;
   border: 1px solid #1a1a1a;
   padding: 8px;
   font-family: 'Cormorant Garamond', serif;
@@ -288,7 +288,7 @@ html {
 .anime-placeholder {
   width: 130px;
   height: 160px;
-  background: #ffa0cd;
+  background: #ffd6ea;
   border: 2px dashed #1a1a1a;
   display: flex;
   align-items: center;
@@ -304,7 +304,7 @@ html {
 }
 
 .contador {
-  background: #ffa0cd;
+  background: #ffd6ea;
   border: 1px solid #1a1a1a;
   padding: 6px;
   text-align: center;
@@ -340,7 +340,7 @@ html {
   letter-spacing: 1px;
   font-size: 0.85rem;
   color: #1a1a1a;
-  background: #ffa0cd;
+  background: #ffd6ea;
   border: 1px solid #1a1a1a;
   padding: 4px;
   text-decoration: none;
@@ -500,7 +500,7 @@ html {
 }
 
 .producto-card {
-  background: #ffa0cd;
+  background: #ffd6ea;
   border: 1px solid #1a1a1a;
   padding: 8px;
   text-align: center;
@@ -546,7 +546,7 @@ html {
   font-family: 'Kiwi', cursive;
   font-size: 0.75rem;
   color: #1a1a1a;
-  background: #fc81b4;
+  background: #fff0f6;
   border: 1px solid #1a1a1a;
   padding: 4px 12px;
   cursor: pointer;
@@ -615,9 +615,9 @@ html {
   right: -320px;
   width: 300px;
   height: 100vh;
-  background-color: #fc81b4;
+  background-color: #fff0f6;
   background-image:
-    linear-gradient(rgba(252,129,180,0.9), rgba(252,129,180,0.9)),
+    linear-gradient(rgba(255,240,246,0.9), rgba(255,240,246,0.9)),
     url('assets/img/carrito-fondo.jpg');
   background-size: cover;
   background-position: center;
@@ -672,7 +672,7 @@ html {
 }
 
 .carrito-item {
-  background: #ffa0cd;
+  background: #ffd6ea;
   border: 1px solid #1a1a1a;
   padding: 10px;
   display: flex;
@@ -691,7 +691,7 @@ html {
 .carrito-item-controles { display: flex; align-items: center; gap: 8px; }
 
 .carrito-item-btn {
-  background: #fc81b4;
+  background: #fff0f6;
   border: 1px solid #1a1a1a;
   color: #1a1a1a;
   width: 22px;
@@ -727,14 +727,14 @@ html {
   text-transform: uppercase;
   font-size: 1rem;
   color: #1a1a1a;
-  background: #f963af;
+  background: #ff8fc0;
   border: none;
   padding: 10px;
   cursor: pointer;
   width: 100%;
 }
 
-.carrito-comprar:hover { background: #ff82b2; }
+.carrito-comprar:hover { background: #ffb3d1; }
 
 /* ===== PÁGINA DE PRODUCTO (producto.html) ===== */
 .producto-top {
@@ -801,7 +801,7 @@ html {
   letter-spacing: 3px;
   text-transform: uppercase;
   color: #1a1a1a;
-  background: #f963af;
+  background: #ff8fc0;
   border: none;
   padding: 14px 30px;
   border-radius: 2px;
@@ -810,7 +810,7 @@ html {
 }
 
 .producto-agregar:hover {
-  background: #ff82b2;
+  background: #ffb3d1;
   letter-spacing: 4px;
 }
 
@@ -863,8 +863,8 @@ html {
   .banner-svg { width: 100%; }
   .banner-svg-texto, .banner-svg-borde { font-size: 175px; }
   .banner-social { left: 12px; gap: 6px; }
-  .banner-social-link { padding: 5px 11px; font-size: 10px; gap: 4px; border-width: 1.5px; box-shadow: 0 2px 0 #ffcfe4; }
-  .banner-social-link:hover { box-shadow: 0 2px 0 #ffb6d9; }
+  .banner-social-link { padding: 5px 11px; font-size: 10px; gap: 4px; border-width: 1.5px; box-shadow: 0 2px 0 #ffd6ea; }
+  .banner-social-link:hover { box-shadow: 0 2px 0 #ffb3d1; }
   .banner-social-link svg { width: 12px; height: 12px; }
   .productos-grid { grid-template-columns: repeat(2, 1fr); }
   .carrito-panel { width: 100%; right: -100%; }
