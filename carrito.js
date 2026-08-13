@@ -69,7 +69,7 @@
 
     const total = carrito.reduce((sum, item) => sum + precioNumero(item.precio) * item.cantidad, 0);
     const cantidadTotal = carrito.reduce((sum, item) => sum + item.cantidad, 0);
-    if (carritoTotalEl) carritoTotalEl.textContent = "$" + total.toLocaleString("es-AR");
+    if (carritoTotalEl) carritoTotalEl.textContent = "Gs. " + total.toLocaleString("es-AR");
     if (carritoContadorEl) carritoContadorEl.textContent = String(cantidadTotal);
   }
 
@@ -120,7 +120,7 @@
       if (!carrito.length) return;
       const lineas = carrito.map((item) => "- " + item.nombre + (item.talle ? " (" + item.talle + ")" : "") + " x" + item.cantidad + " (" + item.precio + ")");
       const total = carrito.reduce((sum, item) => sum + precioNumero(item.precio) * item.cantidad, 0);
-      const mensaje = "Hola! Quiero hacer este pedido:\n" + lineas.join("\n") + "\nTotal: $" + total.toLocaleString("es-AR");
+      const mensaje = "Hola! Quiero hacer este pedido:\n" + lineas.join("\n") + "\nTotal: Gs. " + total.toLocaleString("es-AR");
       window.open("https://wa.me/595981751066?text=" + encodeURIComponent(mensaje), "_blank");
     });
   }

@@ -54,6 +54,15 @@ function normalizar(texto) {
     .trim();
 }
 
+// Formatea el precio para que siempre se muestre en Gs. (guaraníes)
+function formatearPrecio(raw) {
+  const texto = String(raw || '').trim();
+  if (!texto) return 'Gs. 0';
+  if (texto.startsWith('$')) return 'Gs. ' + texto.slice(1).trim();
+  if (/^gs\.?\s/i.test(texto)) return texto;
+  return 'Gs. ' + texto;
+}
+
 // Convierte links de Google Drive (compartir) a un link de imagen directo
 function convertirLinkImagen(url) {
   url = url.trim();
@@ -121,7 +130,7 @@ function buscarIndice(indicePorNombre, campo) {
 
         const id = Number(fila[iId] || i);
         const nombre = fila[iNombre] || '';
-        const precio = fila[iPrecio] || '$0';
+        const precio = formatearPrecio(fila[iPrecio]);
         const color = fila[iColor] || '#ffd6ea';
         const imagenesRaw = fila[iImagen] || '';
         const imagenes = imagenesRaw.split(',').map(u => convertirLinkImagen(u)).filter(u => u);
@@ -155,12 +164,12 @@ function buscarIndice(indicePorNombre, campo) {
     .catch(() => {
       // Si falla, usar productos de fallback
       PRODUCTOS = [
-        { id: 1, nombre: "Top Y2K Estrella", precio: "$8.000", color: "#ffd6ea", detalle: "Talles: S, M, L. Tela stretch, corte cropped.", categoria: "Alt & Y2K", subcategoria: "Tops/mangas largas/remeras", talles: "S, M, L", stock: 5 },
-        { id: 2, nombre: "Campera Vintage", precio: "$15.000", color: "#d6197d", detalle: "Talle único. Pieza de archivo, buen estado.", categoria: "Vintage & 2nd Hand", subcategoria: "Camperas", talles: "Única", stock: 1 },
-        { id: 3, nombre: "Minifalda Soft", precio: "$10.000", color: "#ff8fc0", detalle: "Talles: S, M. Tiro alto, lazo lateral.", categoria: "Soft & Polka Dots", subcategoria: "Minifaldas", talles: "S, M", stock: 3 },
-        { id: 4, nombre: "Bolso Grunge", precio: "$12.000", color: "#fff0f6", detalle: "Cuerina negra, correa ajustable.", categoria: "Midwest & Grunge", subcategoria: "Bolsos", talles: "", stock: 2 },
-        { id: 5, nombre: "Peluche Minecraft", precio: "$6.000", color: "#ffb3d1", detalle: "20cm, bordado, edición limitada.", categoria: "Coleccionables y Otros", subcategoria: "Peluches", talles: "", stock: 0 },
-        { id: 6, nombre: "Carcasa Horror Game", precio: "$5.000", color: "#ffd6ea", detalle: "Compatible iPhone y Android.", categoria: "Coleccionables y Otros", subcategoria: "Carcasas", talles: "", stock: 8 }
+        { id: 1, nombre: "Top Y2K Estrella", precio: "Gs. 8.000", color: "#ffd6ea", detalle: "Talles: S, M, L. Tela stretch, corte cropped.", categoria: "Alt & Y2K", subcategoria: "Tops/mangas largas/remeras", talles: "S, M, L", stock: 5 },
+        { id: 2, nombre: "Campera Vintage", precio: "Gs. 15.000", color: "#d6197d", detalle: "Talle único. Pieza de archivo, buen estado.", categoria: "Vintage & 2nd Hand", subcategoria: "Camperas", talles: "Única", stock: 1 },
+        { id: 3, nombre: "Minifalda Soft", precio: "Gs. 10.000", color: "#ff8fc0", detalle: "Talles: S, M. Tiro alto, lazo lateral.", categoria: "Soft & Polka Dots", subcategoria: "Minifaldas", talles: "S, M", stock: 3 },
+        { id: 4, nombre: "Bolso Grunge", precio: "Gs. 12.000", color: "#fff0f6", detalle: "Cuerina negra, correa ajustable.", categoria: "Midwest & Grunge", subcategoria: "Bolsos", talles: "", stock: 2 },
+        { id: 5, nombre: "Peluche Minecraft", precio: "Gs. 6.000", color: "#ffb3d1", detalle: "20cm, bordado, edición limitada.", categoria: "Coleccionables y Otros", subcategoria: "Peluches", talles: "", stock: 0 },
+        { id: 6, nombre: "Carcasa Horror Game", precio: "Gs. 5.000", color: "#ffd6ea", detalle: "Compatible iPhone y Android.", categoria: "Coleccionables y Otros", subcategoria: "Carcasas", talles: "", stock: 8 }
       ];
       window.dispatchEvent(new Event('productosLoaded'));
     });
