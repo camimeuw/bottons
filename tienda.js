@@ -21,8 +21,8 @@
     return url.indexOf('drive.google.com/thumbnail') !== -1 ? url.replace(/sz=w\d+/, 'sz=w400') : url;
   }
 
-  function fondoColor(p) {
-    return "background:" + p.color + ";";
+  function fondoColor() {
+    return "background:#ffffff;";
   }
 
   // Observer compartido: recién carga la foto de la tarjeta cuando está por entrar en pantalla,
