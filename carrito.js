@@ -51,7 +51,7 @@
       } else {
         carritoItemsEl.innerHTML = carrito.map((item) =>
           '<div class="carrito-item">' +
-          '<p class="carrito-item-nombre">' + item.nombre + '</p>' +
+          '<p class="carrito-item-nombre">' + item.nombre + (item.talle ? ' (' + item.talle + ')' : '') + '</p>' +
           '<p class="carrito-item-precio">' + item.precio + '</p>' +
           '<div class="carrito-item-controles">' +
           '<button class="carrito-item-btn" data-accion="menos" data-id="' + item.id + '">−</button>' +
@@ -115,7 +115,7 @@
     carritoComprarBtn.addEventListener("click", () => {
       const carrito = leerCarrito();
       if (!carrito.length) return;
-      const lineas = carrito.map((item) => "- " + item.nombre + " x" + item.cantidad + " (" + item.precio + ")");
+      const lineas = carrito.map((item) => "- " + item.nombre + (item.talle ? " (" + item.talle + ")" : "") + " x" + item.cantidad + " (" + item.precio + ")");
       const total = carrito.reduce((sum, item) => sum + precioNumero(item.precio) * item.cantidad, 0);
       const mensaje = "Hola! Quiero hacer este pedido:\n" + lineas.join("\n") + "\nTotal: $" + total.toLocaleString("es-AR");
       window.open("https://wa.me/595981751066?text=" + encodeURIComponent(mensaje), "_blank");
