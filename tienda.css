@@ -20,10 +20,7 @@
 }
 
 .tienda-body {
-  background-color: #efdade;
-  background-image: url('assets/img/fondo-rosa.jpg');
-  background-repeat: repeat;
-  background-size: 460px auto;
+  background-color: #ffffff;
   min-height: 100vh;
   font-size: 12px;
 }
@@ -498,7 +495,7 @@ html {
 }
 
 .producto-card {
-  background: #fffaf0;
+  background: #ffd6ea;
   border: 1px solid #1a1a1a;
   padding: 8px;
   text-align: center;
@@ -615,9 +612,8 @@ html {
   height: 100vh;
   background-color: #fff0f6;
   background-image: url('assets/img/carrito-fondo.jpg');
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  background-repeat: repeat;
+  background-size: 180px auto;
   border-left: 2px solid #1a1a1a;
   z-index: 1000;
   display: flex;
