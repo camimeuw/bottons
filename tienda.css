@@ -25,6 +25,12 @@
   font-size: 12px;
 }
 
+.producto-body {
+  background-image: url('assets/img/fondo-rosa.jpg');
+  background-repeat: repeat;
+  background-size: 460px auto;
+}
+
 .producto-body,
 .producto-body * {
   font-family: 'Kiwi', 'Cormorant Garamond', serif !important;
