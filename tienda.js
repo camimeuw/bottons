@@ -25,6 +25,10 @@
     return "background:#ffffff;";
   }
 
+  function fondoTransparente() {
+    return "background:transparent;";
+  }
+
   // Observer compartido: recién carga la foto de la tarjeta cuando está por entrar en pantalla,
   // en vez de disparar todas las descargas de golpe al renderizar la grilla completa.
   const lazyObserver = "IntersectionObserver" in window
@@ -113,7 +117,7 @@
       a.className = "destacado-card";
       a.href = "producto.html?id=" + p.id;
       a.innerHTML =
-        '<div class="destacado-card-img" style="' + fondoColor(p) + '"></div>' +
+        '<div class="destacado-card-img" style="' + fondoTransparente() + '"></div>' +
         '<p class="destacado-card-nombre">' + p.nombre + '</p>' +
         '<p class="destacado-card-precio">' + p.precio + '</p>';
       observarLazy(a.querySelector(".destacado-card-img"), urlMiniatura(p.imagen));
