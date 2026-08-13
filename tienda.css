@@ -632,6 +632,7 @@ html {
   right: -220px;
   width: 200px;
   height: 100vh;
+  height: 100dvh;
   background-color: #fff0f6;
   background-image: url('assets/img/carrito-fondo.jpg');
   background-repeat: repeat;

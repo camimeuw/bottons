@@ -89,9 +89,9 @@ function buscarIndice(indicePorNombre, campo) {
 
 // Cargar productos desde Google Sheets
 (function() {
-  const SHEETS_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQqRiySa4HmpusvqyxqkTKpIAGR-FXnlDRbDOQyEyRq9Dh-0xhn1IOnp3v6bbc4KW-G9LRwfnaC-_fA/pub?output=csv";
+  const SHEETS_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQqRiySa4HmpusvqyxqkTKpIAGR-FXnlDRbDOQyEyRq9Dh-0xhn1IOnp3v6bbc4KW-G9LRwfnaC-_fA/pub?output=csv&cb=" + Date.now();
 
-  fetch(SHEETS_URL)
+  fetch(SHEETS_URL, { cache: "no-store" })
     .then(response => response.text())
     .then(csv => {
       const filas = parsearCSV(csv.trim());
