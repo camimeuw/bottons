@@ -70,7 +70,9 @@ function parsearCSV(texto) {
         const nombre = fila[indicePorNombre['nombre']] || '';
         const precio = fila[indicePorNombre['precio']] || '$0';
         const color = fila[indicePorNombre['color']] || '#ffd6ea';
-        const imagen = fila[indicePorNombre['imagen']] || '';
+        const imagenesRaw = fila[indicePorNombre['imagen']] || '';
+        const imagenes = imagenesRaw.split(',').map(u => u.trim()).filter(u => u);
+        const imagen = imagenes[0] || '';
         const detalle = fila[indicePorNombre['detalle']] || '';
         const categoria = fila[indicePorNombre['categoria']] || '';
         const subcategoria = fila[indicePorNombre['subcategoria']] || '';
@@ -83,6 +85,7 @@ function parsearCSV(texto) {
             precio,
             color,
             imagen,
+            imagenes,
             detalle,
             categoria,
             subcategoria,

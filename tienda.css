@@ -766,7 +766,32 @@ html {
   border-radius: 10px;
   border: 1px solid #1a1a1a;
   box-shadow: 0 6px 24px rgba(0,0,0,0.2);
+  margin-bottom: 12px;
+}
+
+.producto-miniaturas {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  flex-wrap: wrap;
   margin-bottom: 24px;
+}
+
+.producto-miniatura {
+  width: 56px;
+  height: 56px;
+  border-radius: 6px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.producto-miniatura:hover {
+  border-color: #ffb3d1;
+}
+
+.producto-miniatura.activa {
+  border-color: #ff8fc0;
 }
 
 .producto-nombre {

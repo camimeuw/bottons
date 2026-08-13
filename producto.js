@@ -15,13 +15,25 @@
 
   let talleSeleccionado = null;
   const talles = producto.talles ? producto.talles.split(',').map(t => t.trim()) : [];
+  const imagenes = producto.imagenes && producto.imagenes.length ? producto.imagenes : [];
 
-  const fondoImg = producto.imagen
-    ? "background-image:url('" + producto.imagen + "');background-size:cover;background-position:center;"
-    : "background:" + producto.color + ";";
+  function fondoDe(url) {
+    return url
+      ? "background-image:url('" + url + "');background-size:cover;background-position:center;"
+      : "background:" + producto.color + ";";
+  }
 
-  let html =
-    '<div class="producto-img" style="' + fondoImg + '"></div>' +
+  let html = '<div class="producto-img" id="producto-img-principal" style="' + fondoDe(imagenes[0]) + '"></div>';
+
+  if (imagenes.length > 1) {
+    html += '<div class="producto-miniaturas">';
+    imagenes.forEach((url, idx) => {
+      html += '<div class="producto-miniatura' + (idx === 0 ? ' activa' : '') + '" data-url="' + url + '" style="background-image:url(\'' + url + '\');background-size:cover;background-position:center;"></div>';
+    });
+    html += '</div>';
+  }
+
+  html +=
     '<h1 class="producto-nombre">' + producto.nombre + '</h1>' +
     '<p class="producto-precio">' + producto.precio + '</p>' +
     '<p class="producto-descripcion">' + producto.detalle + '</p>';
@@ -37,6 +49,16 @@
   html += '<button class="producto-agregar" type="button" id="producto-agregar-btn">Agregar al Carrito</button>';
 
   page.innerHTML = html;
+
+  const imgPrincipal = document.getElementById('producto-img-principal');
+  const miniaturas = document.querySelectorAll('.producto-miniatura');
+  miniaturas.forEach(mini => {
+    mini.addEventListener('click', () => {
+      imgPrincipal.style.cssText = fondoDe(mini.dataset.url);
+      miniaturas.forEach(m => m.classList.remove('activa'));
+      mini.classList.add('activa');
+    });
+  });
 
   const tallesBtns = document.querySelectorAll('.talle-btn');
   tallesBtns.forEach(btn => {
