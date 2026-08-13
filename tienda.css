@@ -500,7 +500,6 @@ html {
 .producto-card {
   background: rgba(110, 110, 110, 0.6);
   border: 1px solid #1a1a1a;
-  border-radius: 14px;
   padding: 8px;
   text-align: center;
   display: flex;
@@ -508,7 +507,6 @@ html {
   align-items: center;
   gap: 6px;
   transition: all 0.2s ease;
-  overflow: hidden;
 }
 
 .producto-card:hover { border-color: #d6197d; transform: translateY(-2px); }
@@ -527,7 +525,6 @@ html {
   height: 140px;
   background: #ffffff;
   border: 1px solid #1a1a1a;
-  border-radius: 10px;
 }
 
 .card-nombre {
@@ -550,7 +547,6 @@ html {
   color: #1a1a1a;
   background: #fff0f6;
   border: 1px solid #1a1a1a;
-  border-radius: 10px;
   padding: 4px 12px;
   cursor: pointer;
   transition: all 0.2s ease;
