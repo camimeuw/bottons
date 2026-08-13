@@ -75,7 +75,8 @@ const ALIAS_COLUMNAS = {
   detalle: ['detalle', 'descripcion', 'description', 'detalles'],
   categoria: ['categoria', 'category'],
   subcategoria: ['subcategoria', 'sub categoria', 'subcategory'],
-  talles: ['talles', 'talle', 'size', 'sizes', 'tamanos', 'tamanio']
+  talles: ['talles', 'talle', 'size', 'sizes', 'tamanos', 'tamanio'],
+  stock: ['stock', 'inventario', 'cantidad', 'disponible', 'cantidad disponible']
 };
 
 function buscarIndice(indicePorNombre, campo) {
@@ -112,6 +113,7 @@ function buscarIndice(indicePorNombre, campo) {
       const iCategoria = buscarIndice(indicePorNombre, 'categoria');
       const iSubcategoria = buscarIndice(indicePorNombre, 'subcategoria');
       const iTalles = buscarIndice(indicePorNombre, 'talles');
+      const iStock = buscarIndice(indicePorNombre, 'stock');
 
       // Parsear filas
       for (let i = 1; i < filas.length; i++) {
@@ -128,6 +130,7 @@ function buscarIndice(indicePorNombre, campo) {
         const categoria = fila[iCategoria] || '';
         const subcategoria = fila[iSubcategoria] || '';
         const talles = fila[iTalles] || '';
+        const stock = iStock !== undefined ? Number(fila[iStock] || 0) : undefined;
 
         if (nombre) {
           PRODUCTOS.push({
@@ -140,7 +143,8 @@ function buscarIndice(indicePorNombre, campo) {
             detalle,
             categoria,
             subcategoria,
-            talles
+            talles,
+            ...(stock !== undefined && { stock })
           });
         }
       }
@@ -151,12 +155,12 @@ function buscarIndice(indicePorNombre, campo) {
     .catch(() => {
       // Si falla, usar productos de fallback
       PRODUCTOS = [
-        { id: 1, nombre: "Top Y2K Estrella", precio: "$8.000", color: "#ffd6ea", detalle: "Talles: S, M, L. Tela stretch, corte cropped.", categoria: "Alt & Y2K", subcategoria: "Tops/mangas largas/remeras", talles: "S, M, L" },
-        { id: 2, nombre: "Campera Vintage", precio: "$15.000", color: "#d6197d", detalle: "Talle único. Pieza de archivo, buen estado.", categoria: "Vintage & 2nd Hand", subcategoria: "Camperas", talles: "Única" },
-        { id: 3, nombre: "Minifalda Soft", precio: "$10.000", color: "#ff8fc0", detalle: "Talles: S, M. Tiro alto, lazo lateral.", categoria: "Soft & Polka Dots", subcategoria: "Minifaldas", talles: "S, M" },
-        { id: 4, nombre: "Bolso Grunge", precio: "$12.000", color: "#fff0f6", detalle: "Cuerina negra, correa ajustable.", categoria: "Midwest & Grunge", subcategoria: "Bolsos", talles: "" },
-        { id: 5, nombre: "Peluche Minecraft", precio: "$6.000", color: "#ffb3d1", detalle: "20cm, bordado, edición limitada.", categoria: "Coleccionables y Otros", subcategoria: "Peluches", talles: "" },
-        { id: 6, nombre: "Carcasa Horror Game", precio: "$5.000", color: "#ffd6ea", detalle: "Compatible iPhone y Android.", categoria: "Coleccionables y Otros", subcategoria: "Carcasas", talles: "" }
+        { id: 1, nombre: "Top Y2K Estrella", precio: "$8.000", color: "#ffd6ea", detalle: "Talles: S, M, L. Tela stretch, corte cropped.", categoria: "Alt & Y2K", subcategoria: "Tops/mangas largas/remeras", talles: "S, M, L", stock: 5 },
+        { id: 2, nombre: "Campera Vintage", precio: "$15.000", color: "#d6197d", detalle: "Talle único. Pieza de archivo, buen estado.", categoria: "Vintage & 2nd Hand", subcategoria: "Camperas", talles: "Única", stock: 1 },
+        { id: 3, nombre: "Minifalda Soft", precio: "$10.000", color: "#ff8fc0", detalle: "Talles: S, M. Tiro alto, lazo lateral.", categoria: "Soft & Polka Dots", subcategoria: "Minifaldas", talles: "S, M", stock: 3 },
+        { id: 4, nombre: "Bolso Grunge", precio: "$12.000", color: "#fff0f6", detalle: "Cuerina negra, correa ajustable.", categoria: "Midwest & Grunge", subcategoria: "Bolsos", talles: "", stock: 2 },
+        { id: 5, nombre: "Peluche Minecraft", precio: "$6.000", color: "#ffb3d1", detalle: "20cm, bordado, edición limitada.", categoria: "Coleccionables y Otros", subcategoria: "Peluches", talles: "", stock: 0 },
+        { id: 6, nombre: "Carcasa Horror Game", precio: "$5.000", color: "#ffd6ea", detalle: "Compatible iPhone y Android.", categoria: "Coleccionables y Otros", subcategoria: "Carcasas", talles: "", stock: 8 }
       ];
       window.dispatchEvent(new Event('productosLoaded'));
     });

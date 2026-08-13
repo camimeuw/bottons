@@ -38,6 +38,7 @@
     html +=
       '<h1 class="producto-nombre">' + producto.nombre + '</h1>' +
       '<p class="producto-precio">' + producto.precio + '</p>' +
+      (producto.stock !== undefined ? '<p class="producto-stock">' + (producto.stock === 0 ? 'agotado ✦' : 'disponible: ' + producto.stock + ' unidades') + '</p>' : '') +
       '<p class="producto-descripcion">' + producto.detalle + '</p>';
 
     if (talles.length > 0) {
@@ -48,7 +49,7 @@
       html += '</div></div>';
     }
 
-    html += '<button class="producto-agregar" type="button" id="producto-agregar-btn">Agregar al Carrito</button>';
+    html += '<button class="producto-agregar' + (producto.stock === 0 ? ' agotado' : '') + '" type="button" id="producto-agregar-btn"' + (producto.stock === 0 ? ' disabled' : '') + '>' + (producto.stock === 0 ? 'Agotado' : 'Agregar al Carrito') + '</button>';
 
     page.innerHTML = html;
 

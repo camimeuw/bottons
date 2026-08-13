@@ -24,13 +24,15 @@
     const card = document.createElement("div");
     card.className = "producto-card";
     card.dataset.nombre = p.nombre.toLowerCase();
+    const stockStatus = p.stock !== undefined && p.stock === 0 ? ' agotado' : '';
     card.innerHTML =
       '<a href="producto.html?id=' + p.id + '" class="card-link">' +
       '<div class="card-imagen" style="' + fondoProducto(p) + '"></div>' +
       '<p class="card-nombre">' + p.nombre + '</p>' +
       '<p class="card-precio">' + p.precio + '</p>' +
+      (p.stock !== undefined ? '<p class="card-stock">' + (p.stock === 0 ? 'agotado' : 'disponible: ' + p.stock) + '</p>' : '') +
       '</a>' +
-      '<button class="card-btn" type="button" data-id="' + p.id + '">agregar ✦</button>';
+      '<button class="card-btn' + stockStatus + '" type="button" data-id="' + p.id + '"' + (p.stock === 0 ? ' disabled' : '') + '>agregar ✦</button>';
     return card;
   }
 
