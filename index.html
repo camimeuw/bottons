@@ -68,6 +68,12 @@
       toggle.setAttribute('aria-pressed', String(!playing));
       toggle.setAttribute('aria-label', playing ? 'Activar música' : 'Silenciar música');
     });
+
+    // Detener la música siempre al salir de esta página (navegación o bfcache)
+    window.addEventListener('pagehide', () => {
+      music.pause();
+      music.currentTime = 0;
+    });
   </script>
   <script src="transitions.js"></script>
 

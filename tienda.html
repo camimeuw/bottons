@@ -195,26 +195,25 @@
 
 <script>
 (function() {
-  // Pausar TODA música anterior inmediatamente
-  const audiosAnteriores = document.querySelectorAll('audio');
-  audiosAnteriores.forEach(audio => {
-    if (audio.id !== 'musica-inicio') {
-      audio.pause();
-      audio.currentTime = 0;
-    }
-  });
-
   const musicaInicio = document.getElementById('musica-inicio');
   if (!musicaInicio) return;
+  musicaInicio.volume = 0.5;
 
-  // Esperar a que el audio esté listo y reproducir
-  setTimeout(() => {
-    if (!window.tiendaMusicaReproducida) {
-      musicaInicio.volume = 0.5;
-      musicaInicio.play().catch(() => {});
+  function intentarReproducir() {
+    if (window.tiendaMusicaReproducida) return;
+    musicaInicio.play().then(() => {
       window.tiendaMusicaReproducida = true;
-    }
-  }, 100);
+    }).catch(() => {
+      // el navegador bloqueó el autoplay: se reintenta en la próxima interacción
+    });
+  }
+
+  intentarReproducir();
+
+  // Si el navegador bloqueó el autoplay, arrancar en la primera interacción del usuario
+  ["click", "touchstart", "keydown", "scroll"].forEach((evento) => {
+    document.addEventListener(evento, intentarReproducir, { once: true, passive: true });
+  });
 
   // Pausar cuando se navega a otra página
   document.addEventListener('click', (e) => {
@@ -222,6 +221,10 @@
     if (link && !link.href.includes('#') && link.href !== location.href) {
       musicaInicio.pause();
     }
+  });
+
+  window.addEventListener('pagehide', () => {
+    musicaInicio.pause();
   });
 
   // Pausar al hacer scroll fuera de la sección de inicio
