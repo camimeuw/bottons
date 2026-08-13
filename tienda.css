@@ -498,7 +498,7 @@ html {
 }
 
 .producto-card {
-  background: #e8e8e8;
+  background: #6e6e6e;
   border: 1px solid #1a1a1a;
   padding: 8px;
   text-align: center;
@@ -555,13 +555,13 @@ html {
 .card-btn:hover { background: #d6197d; color: #f2ead9; }
 
 .card-btn.agotado {
-  background: #e8e8e8;
+  background: #6e6e6e;
   color: #999;
   cursor: not-allowed;
 }
 
 .card-btn.agotado:hover {
-  background: #e8e8e8;
+  background: #6e6e6e;
   color: #999;
 }
 
@@ -906,13 +906,13 @@ html {
 }
 
 .producto-agregar.agotado {
-  background: #e8e8e8;
+  background: #6e6e6e;
   color: #999;
   cursor: not-allowed;
 }
 
 .producto-agregar.agotado:hover {
-  background: #e8e8e8;
+  background: #6e6e6e;
   color: #999;
   letter-spacing: 3px;
 }
