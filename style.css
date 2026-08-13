@@ -12,13 +12,13 @@
 }
 
 html {
-  background: #0a0a0a;
+  background: var(--page-bg, #0a0a0a);
 }
 
 body {
   font-family: sans-serif;
   overflow-x: hidden;
-  background: #0a0a0a;
+  background: var(--page-bg, #0a0a0a);
   opacity: 0;
   transition: opacity 0.4s ease;
 }
