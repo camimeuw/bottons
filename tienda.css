@@ -692,8 +692,26 @@ html {
   border: 1px solid #1a1a1a;
   padding: 10px;
   display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
+
+.carrito-item-imagen {
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  background-color: #ffffff;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid #1a1a1a;
+}
+
+.carrito-item-info {
+  display: flex;
   flex-direction: column;
   gap: 6px;
+  min-width: 0;
+  flex: 1;
 }
 
 .carrito-item-nombre {

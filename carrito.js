@@ -51,6 +51,8 @@
       } else {
         carritoItemsEl.innerHTML = carrito.map((item) =>
           '<div class="carrito-item">' +
+          (item.imagen ? '<div class="carrito-item-imagen" style="background-image:url(\'' + item.imagen + '\')"></div>' : '') +
+          '<div class="carrito-item-info">' +
           '<p class="carrito-item-nombre">' + item.nombre + (item.talle ? ' (' + item.talle + ')' : '') + '</p>' +
           '<p class="carrito-item-precio">' + item.precio + '</p>' +
           '<div class="carrito-item-controles">' +
@@ -58,6 +60,7 @@
           '<span class="carrito-item-cantidad">' + item.cantidad + '</span>' +
           '<button class="carrito-item-btn" data-accion="mas" data-id="' + item.id + '">+</button>' +
           '<button class="carrito-item-eliminar" data-accion="eliminar" data-id="' + item.id + '">eliminar</button>' +
+          '</div>' +
           '</div>' +
           '</div>'
         ).join("");
@@ -77,7 +80,7 @@
     if (item) {
       item.cantidad += 1;
     } else {
-      carrito.push({ id: producto.id, nombre: producto.nombre, precio: producto.precio, cantidad: 1 });
+      carrito.push({ id: producto.id, nombre: producto.nombre, precio: producto.precio, imagen: producto.imagen || "", cantidad: 1 });
     }
     guardarCarrito(carrito);
     renderCarrito();
