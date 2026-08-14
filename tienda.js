@@ -208,7 +208,13 @@
     if (!btn) return;
     e.preventDefault();
     const producto = PRODUCTOS.find((p) => p.id === Number(btn.dataset.id));
-    if (producto && window.Carrito) window.Carrito.agregar(producto);
+    if (!producto) return;
+    const tieneTalles = producto.talles && String(producto.talles).trim();
+    if (tieneTalles) {
+      window.location.href = "producto.html?id=" + producto.id;
+      return;
+    }
+    if (window.Carrito) window.Carrito.agregar(producto);
   });
 
   const buscador = document.getElementById("buscador");
