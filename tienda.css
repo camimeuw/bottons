@@ -724,7 +724,7 @@ html {
   margin: 0;
 }
 
-.carrito-item-precio { font-size: 0.8rem; color: #d6197d; margin: 0; }
+.carrito-item-precio { font-family: 'Kiwi', cursive; font-size: 0.8rem; color: #d6197d; margin: 0; }
 .carrito-item-controles { display: flex; align-items: center; gap: 8px; }
 
 .carrito-item-btn {
