@@ -652,20 +652,21 @@ html {
   justify-content: space-between;
   align-items: center;
   padding: 16px;
-  border-bottom: 1px dashed #1a1a1a;
+  border-bottom: 1px dashed #fff0f6;
 }
 
 .carrito-titulo {
   font-family: 'Kiwi', cursive;
   font-size: 1.1rem;
-  color: #1a1a1a;
+  color: #fff0f6;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
   margin: 0;
 }
 
 .carrito-cerrar {
-  background: none;
-  border: 1px solid #1a1a1a;
-  color: #1a1a1a;
+  background: rgba(0,0,0,0.35);
+  border: 1px solid #fff0f6;
+  color: #fff0f6;
   font-size: 0.9rem;
   padding: 4px 8px;
   cursor: pointer;
@@ -682,7 +683,8 @@ html {
 
 .carrito-vacio {
   text-align: center;
-  color: #1a1a1a;
+  color: #fff0f6;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
   font-family: 'Cormorant Garamond', serif;
   font-size: 0.9rem;
   margin-top: 40px;
@@ -745,13 +747,14 @@ html {
 
 .carrito-footer {
   padding: 16px;
-  border-top: 1px dashed #1a1a1a;
+  border-top: 1px dashed #fff0f6;
 }
 
 .carrito-total {
   font-family: 'Kiwi', cursive;
   font-size: 0.9rem;
-  color: #1a1a1a;
+  color: #fff0f6;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.8);
   margin: 0 0 10px 0;
   text-align: right;
 }
