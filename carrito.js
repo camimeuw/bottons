@@ -56,10 +56,10 @@
           '<p class="carrito-item-nombre">' + item.nombre + (item.talle ? ' (' + item.talle + ')' : '') + '</p>' +
           '<p class="carrito-item-precio">' + item.precio + '</p>' +
           '<div class="carrito-item-controles">' +
-          '<button class="carrito-item-btn" data-accion="menos" data-id="' + item.id + '">−</button>' +
+          '<button class="carrito-item-btn" data-accion="menos" data-id="' + item.id + '" data-talle="' + (item.talle || '') + '">−</button>' +
           '<span class="carrito-item-cantidad">' + item.cantidad + '</span>' +
-          '<button class="carrito-item-btn" data-accion="mas" data-id="' + item.id + '">+</button>' +
-          '<button class="carrito-item-eliminar" data-accion="eliminar" data-id="' + item.id + '">eliminar</button>' +
+          '<button class="carrito-item-btn" data-accion="mas" data-id="' + item.id + '" data-talle="' + (item.talle || '') + '">+</button>' +
+          '<button class="carrito-item-eliminar" data-accion="eliminar" data-id="' + item.id + '" data-talle="' + (item.talle || '') + '">eliminar</button>' +
           '</div>' +
           '</div>' +
           '</div>'
@@ -75,30 +75,31 @@
 
   function agregarAlCarrito(producto) {
     if (!producto) return;
+    const talle = producto.talle || "";
     const carrito = leerCarrito();
-    const item = carrito.find((it) => it.id === producto.id);
+    const item = carrito.find((it) => it.id === producto.id && (it.talle || "") === talle);
     if (item) {
       item.cantidad += 1;
     } else {
-      carrito.push({ id: producto.id, nombre: producto.nombre, precio: producto.precio, imagen: producto.imagen || "", cantidad: 1 });
+      carrito.push({ id: producto.id, nombre: producto.nombre, precio: producto.precio, imagen: producto.imagen || "", talle, cantidad: 1 });
     }
     guardarCarrito(carrito);
     renderCarrito();
     abrirCarrito();
   }
 
-  function cambiarCantidad(id, delta) {
+  function cambiarCantidad(id, talle, delta) {
     let carrito = leerCarrito();
-    const item = carrito.find((it) => it.id === id);
+    const item = carrito.find((it) => it.id === id && (it.talle || "") === talle);
     if (!item) return;
     item.cantidad += delta;
-    if (item.cantidad <= 0) carrito = carrito.filter((it) => it.id !== id);
+    if (item.cantidad <= 0) carrito = carrito.filter((it) => it !== item);
     guardarCarrito(carrito);
     renderCarrito();
   }
 
-  function eliminarDelCarrito(id) {
-    const carrito = leerCarrito().filter((it) => it.id !== id);
+  function eliminarDelCarrito(id, talle) {
+    const carrito = leerCarrito().filter((it) => !(it.id === id && (it.talle || "") === talle));
     guardarCarrito(carrito);
     renderCarrito();
   }
@@ -108,9 +109,10 @@
       const btn = e.target.closest("button[data-accion]");
       if (!btn) return;
       const id = Number(btn.dataset.id);
-      if (btn.dataset.accion === "mas") cambiarCantidad(id, 1);
-      if (btn.dataset.accion === "menos") cambiarCantidad(id, -1);
-      if (btn.dataset.accion === "eliminar") eliminarDelCarrito(id);
+      const talle = btn.dataset.talle || "";
+      if (btn.dataset.accion === "mas") cambiarCantidad(id, talle, 1);
+      if (btn.dataset.accion === "menos") cambiarCantidad(id, talle, -1);
+      if (btn.dataset.accion === "eliminar") eliminarDelCarrito(id, talle);
     });
   }
 
