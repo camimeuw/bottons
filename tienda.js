@@ -7,7 +7,7 @@
     "Vintage & 2nd Hand": "vintage",
     "Midwest & Grunge": "midwest",
     "Conjuntos Completos": "conjuntos",
-    "Coleccionables y Otros": "coleccionables"
+    "Minecraft and stuff": "coleccionables"
   };
 
   function norm(t) {
