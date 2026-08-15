@@ -72,6 +72,35 @@
     return card;
   }
 
+  // Muestra los productos de a lotes: primeros 6 y un botón "ver más" para revelar el resto,
+  // así una categoría con muchos productos no mete cientos de tarjetas al DOM de una sola vez.
+  const LOTE_PRODUCTOS = 6;
+
+  function poblarGridConPaginacion(grid, productos, contenedorBoton) {
+    let mostrados = 0;
+    let btnVerMas = null;
+
+    function mostrarLote() {
+      productos.slice(mostrados, mostrados + LOTE_PRODUCTOS).forEach((p) => grid.appendChild(crearProductoCard(p)));
+      mostrados += LOTE_PRODUCTOS;
+      if (mostrados >= productos.length && btnVerMas) {
+        btnVerMas.remove();
+        btnVerMas = null;
+      }
+    }
+
+    mostrarLote();
+
+    if (mostrados < productos.length) {
+      btnVerMas = document.createElement("button");
+      btnVerMas.type = "button";
+      btnVerMas.className = "ver-mas-btn";
+      btnVerMas.textContent = "ver más ✦";
+      btnVerMas.addEventListener("click", mostrarLote);
+      contenedorBoton.appendChild(btnVerMas);
+    }
+  }
+
   function renderGrids() {
     (Object.keys(SLUGS)).forEach((cat) => {
       const contenedor = document.getElementById("grid-" + SLUGS[cat]);
@@ -82,14 +111,14 @@
       if (!subcategorias.length) {
         const grid = document.createElement("div");
         grid.className = "productos-grid";
+        contenedor.appendChild(grid);
 
         const productos = PRODUCTOS.filter((p) => norm(p.categoria) === norm(cat));
         if (productos.length) {
-          productos.forEach((p) => grid.appendChild(crearProductoCard(p)));
+          poblarGridConPaginacion(grid, productos, contenedor);
         } else {
           grid.innerHTML = '<p class="productos-empty">próximamente ✦</p>';
         }
-        contenedor.appendChild(grid);
         return;
       }
 
@@ -104,14 +133,14 @@
 
         const grid = document.createElement("div");
         grid.className = "productos-grid";
+        bloque.appendChild(grid);
 
         const productos = PRODUCTOS.filter((p) => norm(p.categoria) === norm(cat) && norm(p.subcategoria) === norm(sub));
         if (productos.length) {
-          productos.forEach((p) => grid.appendChild(crearProductoCard(p)));
+          poblarGridConPaginacion(grid, productos, bloque);
         } else {
           grid.innerHTML = '<p class="productos-empty">próximamente ✦</p>';
         }
-        bloque.appendChild(grid);
         contenedor.appendChild(bloque);
       });
     });

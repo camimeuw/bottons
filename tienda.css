@@ -572,6 +572,22 @@ html {
   margin: 2px 0 0 0;
 }
 
+.ver-mas-btn {
+  display: block;
+  margin: 12px auto 0;
+  font-family: 'Kiwi', cursive;
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  color: #1a1a1a;
+  background: #ffd6ea;
+  border: 1px solid #1a1a1a;
+  padding: 6px 18px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.ver-mas-btn:hover { background: #d6197d; color: #f2ead9; }
+
 /* ===== CARRITO ===== */
 .carrito-icono {
   position: fixed;
