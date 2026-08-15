@@ -7,7 +7,7 @@
     "Vintage & 2nd Hand": "vintage",
     "Midwest & Grunge": "midwest",
     "Conjuntos Completos": "conjuntos",
-    "Minecraft and stuff": "coleccionables"
+    "Minecraft & Stuff": "coleccionables"
   };
 
   function norm(t) {
@@ -78,6 +78,20 @@
       if (!contenedor) return;
       contenedor.innerHTML = "";
       const subcategorias = (typeof SUBCATEGORIAS_TIENDA !== "undefined" && SUBCATEGORIAS_TIENDA[cat]) || [];
+
+      if (!subcategorias.length) {
+        const grid = document.createElement("div");
+        grid.className = "productos-grid";
+
+        const productos = PRODUCTOS.filter((p) => norm(p.categoria) === norm(cat));
+        if (productos.length) {
+          productos.forEach((p) => grid.appendChild(crearProductoCard(p)));
+        } else {
+          grid.innerHTML = '<p class="productos-empty">próximamente ✦</p>';
+        }
+        contenedor.appendChild(grid);
+        return;
+      }
 
       subcategorias.forEach((sub) => {
         const bloque = document.createElement("div");
