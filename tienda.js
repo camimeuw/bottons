@@ -253,7 +253,8 @@
     const producto = PRODUCTOS.find((p) => p.id === Number(btn.dataset.id));
     if (!producto) return;
     const tieneTalles = producto.talles && String(producto.talles).trim();
-    if (tieneTalles) {
+    const tieneColores = producto.color && String(producto.color).trim();
+    if (tieneTalles || tieneColores) {
       window.location.href = "producto.html?id=" + producto.id;
       return;
     }

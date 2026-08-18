@@ -139,7 +139,7 @@ function buscarIndice(indicePorNombre, campo) {
         const id = Number(fila[iId] || i);
         const nombre = fila[iNombre] || '';
         const precio = formatearPrecio(fila[iPrecio]);
-        const color = fila[iColor] || '#ffd6ea';
+        const color = fila[iColor] || '';
         const imagenesRaw = fila[iImagen] || '';
         const imagenes = imagenesRaw.split(',').map(u => convertirLinkImagen(u)).filter(u => u);
         const imagen = imagenes[0] || '';

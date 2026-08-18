@@ -16,13 +16,15 @@
     document.title = "Buttons — " + producto.nombre;
 
     let talleSeleccionado = null;
-    const talles = producto.talles ? producto.talles.split(',').map(t => t.trim()) : [];
+    let colorSeleccionado = null;
+    const talles = producto.talles ? producto.talles.split(',').map(t => t.trim()).filter(Boolean) : [];
+    const colores = producto.color ? String(producto.color).split(',').map(c => c.trim()).filter(Boolean) : [];
     const imagenes = producto.imagenes && producto.imagenes.length ? producto.imagenes : [];
 
     function fondoDe(url) {
       return url
         ? "background-image:url('" + url + "');background-size:cover;background-position:center;"
-        : "background:" + producto.color + ";";
+        : "background:#ffd6ea;";
     }
 
     let html = '<div class="producto-img" id="producto-img-principal" style="' + fondoDe(imagenes[0]) + '"></div>';
@@ -40,6 +42,14 @@
       '<p class="producto-precio">' + producto.precio + '</p>' +
       (producto.stock !== undefined ? '<p class="producto-stock">' + (producto.stock === 0 ? 'agotado ✦' : 'disponible: ' + producto.stock + ' unidades') + '</p>' : '') +
       '<p class="producto-descripcion">' + producto.detalle + '</p>';
+
+    if (colores.length > 0) {
+      html += '<div class="producto-colores"><p class="producto-colores-label">Elegí tu color:</p><div class="colores-grid">';
+      colores.forEach(color => {
+        html += '<button class="color-btn" data-color="' + color + '">' + color + '</button>';
+      });
+      html += '</div></div>';
+    }
 
     if (talles.length > 0) {
       html += '<div class="producto-talles"><p class="producto-talles-label">Elegí tu talle:</p><div class="talles-grid">';
@@ -63,6 +73,15 @@
       });
     });
 
+    const coloresBtns = document.querySelectorAll('.color-btn');
+    coloresBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        coloresBtns.forEach(b => b.classList.remove('activo'));
+        btn.classList.add('activo');
+        colorSeleccionado = btn.dataset.color;
+      });
+    });
+
     const tallesBtns = document.querySelectorAll('.talle-btn');
     tallesBtns.forEach(btn => {
       btn.addEventListener('click', () => {
@@ -75,6 +94,10 @@
     const agregarBtn = document.getElementById("producto-agregar-btn");
     if (agregarBtn) {
       agregarBtn.addEventListener("click", () => {
+        if (colores.length > 0 && !colorSeleccionado) {
+          alert("Por favor elegí un color ✦");
+          return;
+        }
         if (talles.length > 0 && !talleSeleccionado) {
           alert("Por favor elegí un talle ✦");
           return;
@@ -82,6 +105,9 @@
         const productoConTalle = Object.assign({}, producto);
         if (talleSeleccionado) {
           productoConTalle.talle = talleSeleccionado;
+        }
+        if (colorSeleccionado) {
+          productoConTalle.color = colorSeleccionado;
         }
         if (window.Carrito) window.Carrito.agregar(productoConTalle);
       });
