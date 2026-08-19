@@ -188,7 +188,7 @@ function buscarIndice(indicePorNombre, campo) {
 const CATEGORIAS_TIENDA = ["Alt & Y2K", "Soft & Polka Dots", "Vintage & 2nd Hand", "Midwest & Grunge", "Conjuntos Completos", "Minecraft & Stuff"];
 
 const ROPA = ["Tops/mangas largas/remeras", "Camperas", "Minifaldas", "Zapatos", "Accesorios", "Pantalones", "Shorts", "Bolsos", "Bikinis", "Vestidos"];
-const MIDWEST = ["Tops", "Camperas", "Minifaldas", "Zapatos", "Accesorios", "Pantalones", "Shorts", "Bolsos", "Vestidos"];
+const MIDWEST = ["Tops/mangas largas/remeras", "Camperas", "Minifaldas", "Zapatos", "Accesorios", "Pantalones", "Shorts", "Bolsos", "Vestidos"];
 
 const SUBCATEGORIAS_TIENDA = {
   "Alt & Y2K": ROPA,
